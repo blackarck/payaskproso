@@ -1,0 +1,357 @@
+/* ==========================================================================
+   Payroll by AskProso — Design System & Visual Engine
+   Crafted in the intersection of Cursor.com's technical precision and
+   Guild.ai's alive, generative architectural aesthetics.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Brand Core: AskProso Laser Ruby */
+  --color-brand-ruby: #E20E3C;
+  --color-brand-ruby-dark: #B50B30;
+  --color-brand-ruby-light: #FF2E5B;
+  --color-brand-ruby-subtle: rgba(226, 14, 60, 0.08);
+  --color-brand-ruby-glow: rgba(226, 14, 60, 0.28);
+
+  /* Functional Accents */
+  --color-accent-emerald: #10B981;
+  --color-accent-emerald-subtle: rgba(16, 185, 129, 0.12);
+  --color-accent-indigo: #6366F1;
+  --color-accent-indigo-subtle: rgba(99, 102, 241, 0.12);
+  --color-accent-amber: #F59E0B;
+  --color-accent-cyan: #06B6D4;
+
+  /* Light Theme (Crisp Titanium & Architectural Slate) */
+  --bg-page: #FAFAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-surface-subtle: #F4F5F8;
+  --bg-surface-glass: rgba(255, 255, 255, 0.85);
+
+  --border-light: rgba(15, 23, 42, 0.08);
+  --border-medium: rgba(15, 23, 42, 0.14);
+  --border-highlight: rgba(15, 23, 42, 0.24);
+
+  --text-primary: #090D16;
+  --text-secondary: #4B5565;
+  --text-muted: #6B7280;
+  --text-subtle: #9CA3AF;
+
+  --shadow-hairline: 0 0 0 1px rgba(15, 23, 42, 0.06);
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 16px 36px -6px rgba(15, 23, 42, 0.10), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
+  --shadow-xl: 0 24px 56px -12px rgba(15, 23, 42, 0.14);
+
+  --grid-line-color: rgba(15, 23, 42, 0.035);
+}
+
+/* Dark Theme (Obsidian & Titanium Steel) */
+html.dark {
+  --bg-page: #06090F;
+  --bg-surface: #0C111C;
+  --bg-surface-elevated: #111827;
+  --bg-surface-subtle: #141D30;
+  --bg-surface-glass: rgba(10, 15, 26, 0.82);
+
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-highlight: rgba(255, 255, 255, 0.25);
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-subtle: #475569;
+
+  --shadow-hairline: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 20px -2px rgba(0, 0, 0, 0.55), 0 2px 6px -1px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 45px -8px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 32px 70px -15px rgba(0, 0, 0, 0.85);
+
+  --grid-line-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Global Reset & Base Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Font Classes */
+.font-display {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: "zero" 1, "tnum" 1;
+}
+
+/* Technical Hairline Micro-Labels (Cursor style) */
+.tech-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Background Grids & Ambient Glow */
+.tech-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+}
+
+.hero-radial-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(226, 14, 60, 0.07) 0%, rgba(99, 102, 241, 0.04) 40%, transparent 70%);
+}
+
+.dark .hero-radial-glow {
+  background: radial-gradient(circle at 50% 25%, rgba(226, 14, 60, 0.12) 0%, rgba(99, 102, 241, 0.08) 45%, transparent 75%);
+}
+
+/* Glass Panels with Hairline Inset Highlights */
+.glass-panel {
+  background: var(--bg-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), var(--shadow-sm);
+}
+
+.card-tech {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.2s ease, 
+              box-shadow 0.2s ease;
+}
+
+.card-tech:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+}
+
+/* Architectural Headline Typography */
+.headline-primary {
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.gradient-headline {
+  background: linear-gradient(135deg, #090D16 20%, #4B5565 65%, #E20E3C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .gradient-headline {
+  background: linear-gradient(135deg, #FFFFFF 25%, #94A3B8 70%, #FF2E5B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Laser Ruby Accent Text */
+.text-laser-ruby {
+  color: var(--color-brand-ruby);
+}
+
+.dark .text-laser-ruby {
+  color: var(--color-brand-ruby-light);
+}
+
+/* High Precision Action Buttons (Cursor.com style) */
+.btn-primary-laser {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  background: var(--color-brand-ruby);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 4px 16px -2px var(--color-brand-ruby-glow);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-laser:hover {
+  background: var(--color-brand-ruby-light);
+  transform: translateY(-1px);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 2px 4px rgba(0, 0, 0, 0.12),
+    0 8px 24px -2px var(--color-brand-ruby-glow);
+}
+
+.btn-primary-laser:active {
+  transform: translateY(0);
+}
+
+.btn-secondary-titanium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary-titanium:hover {
+  background: var(--bg-surface-subtle);
+  border-color: var(--border-highlight);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Pulsing Status Indicators */
+.pulse-dot-live {
+  position: relative;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-accent-emerald);
+}
+
+.pulse-dot-live::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid var(--color-accent-emerald);
+  animation: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  50% { transform: scale(1.6); opacity: 0.2; }
+  100% { transform: scale(0.9); opacity: 0.9; }
+}
+
+/* Guild.ai-style Canvas Dividers */
+.divider-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 38px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.divider-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Interactive Workbench Terminal / Code / Output */
+.workbench-shell {
+  background: #090D16;
+  color: #E2E8F0;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.workbench-tab {
+  padding: 8px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 8px;
+  color: #94A3B8;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.workbench-tab.active {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Range Slider Styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--border-medium);
+  height: 6px;
+  border-radius: 9999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -6px;
+  background-color: var(--color-brand-ruby);
+  height: 18px;
+  width: 18px;
+  border-radius: 9999px;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(226, 14, 60, 0.4);
+  transition: transform 0.12s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background-color: var(--color-brand-ruby-light);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-ruby);
+}

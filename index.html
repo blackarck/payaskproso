@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payroll by AskProso — AI-First Managed Payroll for India</title>
+  <meta name="description" content="AI-first managed payroll for India. A deterministic engine calculates every rupee to the paisa, AskProso AI chases missing data and explains every payslip, and licensed specialists own your PF, ESI, PT and TDS filings." />
+  <link rel="icon" type="image/png" href="/img/paylogo.png">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ruby: '#E20E3C',
+              'ruby-dark': '#B50B30',
+              'ruby-light': '#FF2E5B',
+              'ruby-subtle': 'rgba(226, 14, 60, 0.08)',
+            },
+            payroll: {
+              DEFAULT: '#9C68BB',
+              dark: '#7E4BA3',
+              light: '#C39BE0',
+            },
+            accent: {
+              indigo: '#6366F1',
+              emerald: '#10B981',
+              amber: '#F59E0B',
+              cyan: '#06B6D4'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-[#FAFAFC] dark:bg-[#06090F] text-slate-900 dark:text-slate-100 min-h-screen selection:bg-[#E20E3C] selection:text-white transition-colors duration-200">
+
+  <!-- Top Announcement Bar (Cursor-style architectural hairline) -->
+  <aside aria-label="Announcement" class="w-full border-b border-slate-200/70 dark:border-white/[0.06] bg-white/60 dark:bg-[#06090F]/70 backdrop-blur-md text-xs py-1.5 px-4 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2.5">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full tech-label text-[10px] bg-rose-500/10 text-[#E20E3C] dark:text-rose-400 border border-rose-500/20 font-semibold tracking-wider">
+          <span class="pulse-dot-live"></span>
+          MANAGED SERVICE
+        </span>
+        <span class="text-slate-700 dark:text-slate-300 text-[11px] sm:text-[12px] font-medium flex items-center gap-1.5 flex-wrap">
+          <span class="text-slate-950 dark:text-white font-semibold">Zero-Error Month-Ends:</span>
+          <span>End-to-end payroll bureau by</span>
+          <a href="https://www.proso.ai" target="_blank" rel="noopener noreferrer" class="font-semibold text-slate-900 dark:text-slate-100 hover:text-[#E20E3C] dark:hover:text-[#FF2E5B] underline decoration-slate-300 dark:decoration-slate-700 underline-offset-2 transition-colors">Proso.ai</a>
+          <span class="text-slate-400 dark:text-slate-600 hidden md:inline">&middot;</span>
+          <span class="text-slate-500 dark:text-slate-400 hidden md:inline">Ecosystem:</span>
+          <a href="https://www.askproso.ai" target="_blank" rel="noopener noreferrer" class="hidden md:inline text-slate-600 dark:text-slate-400 hover:text-[#E20E3C] transition-colors">AskProso</a>
+          <span class="text-slate-400 dark:text-slate-600 hidden md:inline">&amp;</span>
+          <a href="https://workkudo.ai" target="_blank" rel="noopener noreferrer" class="hidden md:inline text-slate-600 dark:text-slate-400 hover:text-[#E20E3C] transition-colors">Workkudo</a>
+        </span>
+      </div>
+      <div class="flex items-center gap-3.5 text-slate-500 dark:text-slate-400 text-[11px]">
+        <div class="hidden sm:inline-flex items-center gap-1.5 font-mono text-[10px] tracking-wide text-slate-600 dark:text-slate-400">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span>🇮🇳 Built for Indian payroll</span>
+          <span class="text-slate-300 dark:text-slate-700">&bull;</span>
+          <span class="text-slate-400 dark:text-slate-500">AI-first &middot; Human-accountable</span>
+        </div>
+        <span class="text-slate-300 dark:text-slate-700 hidden sm:inline">&vert;</span>
+        <a href="https://www.proso.ai/contact-us" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1 hover:text-[#E20E3C] dark:hover:text-rose-400 transition-colors">
+          <span>Enterprise Bureau</span>
+          <i data-lucide="arrow-up-right" class="w-3 h-3 text-slate-400"></i>
+        </a>
+        <a href="#calculator" class="text-[#E20E3C] dark:text-rose-400 hover:underline font-semibold font-mono text-[11px] inline-flex items-center gap-1">
+          <span>ROI Calculator</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation (Cursor / Linear-precision architectural glass header) -->
+  <header id="main-nav" class="sticky top-0 z-40 transition-all duration-300 border-b border-slate-200/80 dark:border-white/[0.06] bg-white/80 dark:bg-[#06090F]/85 backdrop-blur-xl shadow-[0_1px_2px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo Mark & Wordmark: Ask (ink) + Proso (ruby) + PAYROLL (product purple from the logo) -->
+      <a href="#" class="flex items-center gap-3 group select-none shrink-0" aria-label="AskProso Payroll — home">
+        <img src="/img/paylogo.png" alt="" width="136" height="149" class="h-9 w-auto transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3" />
+        <div class="flex items-center gap-2.5 whitespace-nowrap">
+          <span class="font-display font-extrabold text-[22px] leading-none tracking-tight">
+            <span class="text-slate-950 dark:text-white">Ask</span><span class="text-[#E20E3C] dark:text-[#FF2E5B]">Proso</span>
+          </span>
+          <span class="hidden sm:inline-block h-4 w-px bg-slate-300 dark:bg-white/15"></span>
+          <span class="hidden sm:inline tech-label text-[11px] font-bold tracking-[0.22em] text-payroll-dark dark:text-payroll-light">
+            PAYROLL
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links with Pill Hover States -->
+      <nav class="hidden xl:flex items-center gap-0.5 whitespace-nowrap text-[13px] font-medium text-slate-600 dark:text-slate-300">
+        <a href="#simulation" class="px-3 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-white/[0.06] hover:text-slate-950 dark:hover:text-white transition-all inline-flex items-center gap-1.5">
+          <span>Live Engine</span>
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+          </span>
+        </a>
+        <a href="#features" class="px-3 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-white/[0.06] hover:text-slate-950 dark:hover:text-white transition-all">
+          AI &amp; Engine
+        </a>
+        <a href="#how-it-works" class="px-3 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-white/[0.06] hover:text-slate-950 dark:hover:text-white transition-all">
+          The Managed Journey
+        </a>
+        <a href="#compliance" class="px-3 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-white/[0.06] hover:text-slate-950 dark:hover:text-white transition-all">
+          Compliance
+        </a>
+        <a href="#calculator" class="px-3 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-white/[0.06] hover:text-slate-950 dark:hover:text-white transition-all">
+          Savings Calculator
+        </a>
+        <a href="https://www.proso.ai/contact-us" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-all inline-flex items-center gap-1">
+          <span>Contact</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-70"></i>
+        </a>
+      </nav>
+
+      <!-- Right Controls & CTA Cluster -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        
+        <!-- Light/Dark Mode Switcher Glass Button -->
+        <button type="button" aria-label="Toggle Theme" class="theme-toggle-btn w-9 h-9 inline-flex items-center justify-center rounded-full border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white bg-slate-100/60 dark:bg-white/[0.05] hover:bg-slate-100 dark:hover:bg-white/[0.08] transition-all shadow-sm">
+          <i data-lucide="moon" class="icon-moon w-4 h-4"></i>
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden"></i>
+        </button>
+
+        <!-- CTA Button with Laser Glow & Arrow -->
+        <button type="button" class="open-consultation-modal btn-primary-laser hidden md:inline-flex items-center gap-1.5 whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold rounded-full shadow-sm hover:shadow-[0_0_16px_rgba(226,14,60,0.35)] transition-all">
+          <span>Hand Over Your Payroll</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-0.5"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle Menu" class="xl:hidden w-9 h-9 inline-flex items-center justify-center rounded-lg border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-slate-100/60 dark:bg-white/[0.05]">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu (Frosted Glass Accordion) -->
+    <div id="mobile-menu" class="xl:hidden hidden px-5 pt-3 pb-6 border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#06090F]/95 backdrop-blur-2xl">
+      <div class="flex flex-col gap-1.5 text-sm font-medium">
+        <a href="#simulation" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors flex items-center justify-between">
+          <span>Live Engine Preview</span>
+          <span class="inline-flex items-center gap-1 text-[10px] font-mono font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">LIVE</span>
+        </a>
+        <a href="#features" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors">AI &amp; Engine</a>
+        <a href="#how-it-works" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors">The Managed Journey</a>
+        <a href="#compliance" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors">Compliance</a>
+        <a href="#calculator" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors">Savings Calculator</a>
+        <a href="https://www.proso.ai/contact-us" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-lg text-[#E20E3C] dark:text-rose-400 hover:bg-rose-500/10 transition-colors flex items-center justify-between font-semibold">
+          <span>Contact Us (Proso.ai)</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+        <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+          <button type="button" class="open-consultation-modal btn-primary-laser w-full py-2.5 text-xs rounded-full">
+            Hand Over Your Payroll &rarr;
+          </button>
+        </div>
+        <div class="pt-2 text-[11px] text-slate-400 flex flex-wrap items-center gap-3 font-mono">
+          <a href="https://www.proso.ai" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white">proso.ai</a>
+          <span>&middot;</span>
+          <a href="https://www.askproso.ai" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white">askproso.ai</a>
+          <span>&middot;</span>
+          <a href="https://workkudo.ai" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white">workkudo.ai</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section: Dynamic Canvas Background + Surgical Precision Typography -->
+  <section class="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden tech-grid-pattern hero-radial-glow">
+    
+    <!-- Guild.ai-inspired Interactive Responsive 60FPS Canvas -->
+    <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-auto z-0" aria-hidden="true"></canvas>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pointer-events-none">
+      
+      <!-- Eyebrow & Headlines -->
+      <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+        
+        <div class="pointer-events-auto inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 shadow-sm mb-6 backdrop-blur-md">
+          <span class="pulse-dot-live"></span>
+          <span class="tech-label text-[10px] text-slate-700 dark:text-slate-300">
+            ✦ AI-FIRST MANAGED PAYROLL · MADE FOR INDIA
+          </span>
+        </div>
+
+        <h1 class="headline-primary font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-slate-950 dark:text-white mb-6">
+          Hand over your entire payroll journey.
+          <span class="gradient-headline block mt-2">We run it. You relax.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-9 font-normal">
+          No payroll software to wrangle. No compliance panic. A deterministic engine calculates every rupee to the paisa, <strong>AskProso AI</strong> chases missing data, flags anomalies and explains every payslip, and our licensed payroll specialists own your PF, ESI, PT and TDS filings and the bank file&mdash;end to end.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="pointer-events-auto flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-14">
+          <button type="button" class="open-consultation-modal btn-primary-laser w-full sm:w-auto px-7 py-3.5 text-sm">
+            <span>Hand Over Your Payroll</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </button>
+          
+          <a href="#simulation" class="btn-secondary-titanium w-full sm:w-auto px-6 py-3.5 text-sm flex items-center justify-center gap-2">
+            <i data-lucide="terminal" class="w-4 h-4 text-[#E20E3C]"></i>
+            <span>Inspect Live Engine</span>
+          </a>
+        </div>
+
+        <!-- Technical Trust Indicators (Hairline Architectural Grid) -->
+        <div class="pointer-events-auto grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-4xl text-left">
+          
+          <div class="p-3.5 rounded-xl bg-white/80 dark:bg-[#0C111C]/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+            <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 mb-1">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+              <span class="tech-label text-[10px]">GUARANTEE</span>
+            </div>
+            <div class="font-display font-bold text-sm text-slate-900 dark:text-white">100% On-Time SLA</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Salaries credited on time</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-white/80 dark:bg-[#0C111C]/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+            <div class="flex items-center gap-2 text-[#E20E3C] dark:text-rose-400 mb-1">
+              <i data-lucide="file-check-2" class="w-4 h-4"></i>
+              <span class="tech-label text-[10px]">ZERO RISK</span>
+            </div>
+            <div class="font-display font-bold text-sm text-slate-900 dark:text-white">Zero Tax Penalties</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Filings backed by guarantee</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-white/80 dark:bg-[#0C111C]/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+            <div class="flex items-center gap-2 text-indigo-500 mb-1">
+              <i data-lucide="landmark" class="w-4 h-4"></i>
+              <span class="tech-label text-[10px]">BANK-READY</span>
+            </div>
+            <div class="font-display font-bold text-sm text-slate-900 dark:text-white">Validated Bank Files</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">HDFC, ICICI, SBI & Axis</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-white/80 dark:bg-[#0C111C]/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+            <div class="flex items-center gap-2 text-amber-500 mb-1">
+              <i data-lucide="lock" class="w-4 h-4"></i>
+              <span class="tech-label text-[10px]">SOVEREIGN</span>
+            </div>
+            <div class="font-display font-bold text-sm text-slate-900 dark:text-white">DPDP Act Compliant</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Masked PII &middot; India-hosted</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Animated Canvas Divider 1 (Guild.ai style) -->
+  <div class="divider-canvas-container" aria-hidden="true">
+    <canvas class="divider-canvas"></canvas>
+  </div>
+
+  <!-- Interactive Live Engine Simulation Section (Cursor/Guild Control Plane) -->
+  <section id="simulation" class="py-20 bg-white dark:bg-[#080D18] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-[11px] font-mono mb-3 border border-slate-200 dark:border-slate-700">
+          <span>✦ LIVE PREVIEW &middot; SAMPLE DATA</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+          Watch Month-End Run Itself
+        </h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">
+          No panic on the 30th. Our engine recalculates payroll in the background every time an input changes, AskProso AI chases whatever is missing, and you review one clear summary.
+        </p>
+
+        <!-- Workbench Tab Switcher -->
+        <div class="mt-6 inline-flex p-1 rounded-xl bg-slate-100 dark:bg-[#0C1220] border border-slate-200 dark:border-slate-800">
+          <button type="button" data-tab="client" class="workbench-tab-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300">
+            Client Executive View
+          </button>
+          <button type="button" data-tab="dag" class="workbench-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300">
+            Calculation Engine
+          </button>
+          <button type="button" data-tab="chaser" class="workbench-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300">
+            AI Data Chaser
+          </button>
+          <button type="button" data-tab="copilot" class="workbench-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300">
+            Ask Payroll (Employees)
+          </button>
+        </div>
+      </div>
+
+      <!-- Workbench Window Frame -->
+      <div class="workbench-shell">
+        
+        <!-- Window Chrome / Metadata Bar -->
+        <div class="px-4 py-2.5 border-b border-white/10 bg-[#0C1220] flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+          <div class="flex items-center gap-3">
+            <div class="flex gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+            </div>
+            <div class="text-slate-400 border-l border-white/10 pl-3">
+              tenant: <span class="text-white font-semibold">Kesari Logistics Pvt Ltd</span> &middot; cycle: <span class="text-white font-semibold">Oct 2026</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-800/40 text-[11px]">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Payroll Health Index: 98% &middot; Ready to disburse
+            </span>
+          </div>
+        </div>
+
+        <!-- Panel 1: Client Executive View (Default) -->
+        <div id="panel-client" class="workbench-panel p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 space-y-5">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-xs text-slate-400">Headcount</div>
+                <div class="font-display font-bold text-2xl text-white mt-1">412</div>
+                <div class="text-[11px] text-emerald-400 mt-1 font-mono">+12 Joiners verified</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-xs text-slate-400">Net Salary Disbursement</div>
+                <div class="font-mono font-bold text-xl text-white mt-1">₹1,82,45,300</div>
+                <div class="text-[11px] text-slate-400 mt-1 font-mono">Bank Checksum Validated</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-xs text-slate-400">Statutory Dues (PF/ESI/PT)</div>
+                <div class="font-mono font-bold text-xl text-white mt-1">₹34,18,920</div>
+                <div class="text-[11px] text-emerald-400 mt-1 font-mono">Challans Pre-Prepared</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-xs text-slate-400">Action Required by You</div>
+                <div class="font-display font-bold text-2xl text-emerald-400 mt-1">0</div>
+                <div class="text-[11px] text-slate-400 mt-1 font-mono">Bureau Cleared All</div>
+              </div>
+            </div>
+
+            <!-- Variance Narrative -->
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+              <div class="flex items-center justify-between pb-2 border-b border-white/10">
+                <span class="font-display font-bold text-xs text-white flex items-center gap-2">
+                  <span class="text-[#E20E3C]">✦</span> AI Variance Narrative (Oct vs Sep 2026)
+                </span>
+                <span class="text-[10px] font-mono text-slate-400">Every figure traced to the engine</span>
+              </div>
+              <div class="text-xs text-slate-300 space-y-2 leading-relaxed">
+                <p>• <strong>Net Payout delta:</strong> +₹8,42,100 (+4.8% MoM). Driven by 12 mid-month joiners in Mumbai fulfillment hub and annual appraisals for the engineering cohort.</p>
+                <p>• <strong>Anomaly flagged:</strong> 1 negative net pay case (Imran Qureshi, E1007) caught by the engine's safety guard and placed on salary hold by your payroll specialist, keeping your ICICI bank file clean.</p>
+                <p>• <strong>Statutory status:</strong> Maharashtra &amp; Gujarat PT slabs applied without variance. PF wages capped at the ₹15,000 ceiling where applicable.</p>
+              </div>
+              <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+                <span class="text-xs text-slate-400">Ready for disbursement on 31 Oct 2026</span>
+                <button type="button" class="open-consultation-modal btn-primary-laser px-4 py-2 text-xs">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5"></i>
+                  <span>Sign-Off & Authorize Bank File</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Explainer Stream -->
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-2 border-b border-white/10">
+                <span class="font-display font-bold text-xs text-white">AskProso Grounded Explainer</span>
+                <span class="tech-label text-[9px] text-emerald-400 bg-emerald-950 px-1.5 py-0.5 rounded">GROUNDED AI</span>
+              </div>
+              <div class="mt-3 space-y-2 text-xs">
+                <button type="button" data-query="q-diff" class="copilot-query-btn w-full text-left p-2.5 rounded-lg border border-white/10 hover:border-[#E20E3C] bg-white/5 transition-colors">
+                  Why did Rahul's net pay increase by ₹4,100?
+                </button>
+                <button type="button" data-query="q-tax" class="copilot-query-btn w-full text-left p-2.5 rounded-lg border border-white/10 hover:border-[#E20E3C] bg-white/5 transition-colors">
+                  Compare Old vs New Tax Regime savings
+                </button>
+                <button type="button" data-query="q-hold" class="copilot-query-btn w-full text-left p-2.5 rounded-lg border border-white/10 hover:border-[#E20E3C] bg-white/5 transition-colors">
+                  Why was Imran's salary placed on hold?
+                </button>
+              </div>
+              <div id="copilot-chat-output" class="mt-3 p-3 rounded-lg bg-black/40 border border-white/10 min-h-[140px] text-xs">
+                <div class="space-y-1 text-slate-300">
+                  <div class="font-bold text-white">Rahul Sharma (E1001) Net Pay Breakdown:</div>
+                  <div class="font-mono text-[11px] text-slate-400">• Basic Increment: +₹5,000</div>
+                  <div class="font-mono text-[11px] text-slate-400">• PF Deduction: ₹1,800 (Capped)</div>
+                  <div class="font-mono text-[11px] text-slate-400">• TDS Bracket Adjustment: -₹900</div>
+                  <div class="font-bold text-emerald-400 font-mono mt-1">Net Credit: +₹4,100 exactly.</div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-2 text-[10px] text-slate-500 font-mono">
+              No raw PAN or bank data reaches the AI &middot; answers cite the trace
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Calculation Engine -->
+        <div id="panel-dag" class="workbench-panel p-6 hidden">
+          <div class="font-mono text-xs text-slate-300 space-y-2">
+            <div class="p-2.5 rounded bg-black/40 border border-white/10 flex items-center justify-between gap-3">
+              <span><span class="text-slate-500">01</span> &nbsp;Ingest attendance, LOP &amp; one-time inputs &middot; 412 employees</span>
+              <span class="text-emerald-400 shrink-0">0.08ms</span>
+            </div>
+            <div class="p-2.5 rounded bg-black/40 border border-white/10 flex items-center justify-between gap-3">
+              <span><span class="text-slate-500">02</span> &nbsp;Earnings: Basic, HRA, special allowance &middot; pro-rated for LOP</span>
+              <span class="text-emerald-400 shrink-0">0.03ms</span>
+            </div>
+            <div class="p-2.5 rounded bg-black/40 border border-white/10 flex items-center justify-between gap-3">
+              <span><span class="text-slate-500">03</span> &nbsp;Statutory: EPF/EPS, ESI, state PT slabs (MH, GJ, KA, DL&hellip;)</span>
+              <span class="text-emerald-400 shrink-0">0.05ms</span>
+            </div>
+            <div class="p-2.5 rounded bg-black/40 border border-white/10 flex items-center justify-between gap-3">
+              <span><span class="text-slate-500">04</span> &nbsp;TDS: Section 192 projection &middot; old vs new regime (115BAC)</span>
+              <span class="text-emerald-400 shrink-0">0.04ms</span>
+            </div>
+            <div class="p-2.5 rounded bg-black/40 border border-white/10 flex items-center justify-between gap-3">
+              <span><span class="text-slate-500">05</span> &nbsp;Net pay, employer cost &amp; bank file sealed with SHA-256</span>
+              <span class="text-emerald-400 shrink-0">0.02ms</span>
+            </div>
+            <div class="p-3 text-[11px] text-slate-400 font-sans border-t border-white/10 mt-3 leading-relaxed">
+              <strong class="text-slate-200">412 employees in 1.4 seconds</strong>, with a full trace behind every figure (built for 5,000+ in under 15 seconds). Money is held in exact integer paise &mdash; zero floating-point drift. Same inputs + same rule version = the same answer, forever. <strong class="text-slate-200">The engine never calls an AI.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: AI Data Chaser -->
+        <div id="panel-chaser" class="workbench-panel p-6 hidden">
+          <div class="text-xs text-slate-400 mb-4">
+            The chaser scores readiness daily and drafts reminders for your HR contact. Your payroll specialist approves each message in one click before it goes out.
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+              <div class="tech-label text-[10px] text-sky-400">T-7 &middot; READINESS SCAN</div>
+              <div class="font-semibold text-white">Readiness score: 92%</div>
+              <p class="text-slate-400 text-[11px]">5 employees missing bank details, 2 joiners without a salary structure. Summary sent to your payroll specialist.</p>
+              <div class="tech-label text-[10px] text-emerald-400 font-mono">STATUS: DRAFTS QUEUED</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+              <div class="tech-label text-[10px] text-indigo-400">T-5 &middot; REMINDER DRAFTED</div>
+              <div class="font-semibold text-white">Polite WhatsApp &amp; email to your HR contact</div>
+              <p class="text-slate-400 text-[11px]">Lists exactly who is incomplete and what is missing. Attachments sent back (attendance sheet, bank proof) are parsed for review.</p>
+              <div class="tech-label text-[10px] text-emerald-400 font-mono">STATUS: APPROVED &amp; SENT</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+              <div class="tech-label text-[10px] text-amber-400">T-3 &middot; ESCALATION</div>
+              <div class="font-semibold text-white">Attendance nudge to 3 warehouse managers</div>
+              <p class="text-slate-400 text-[11px]">Missing clock-ins resolved within 4 hours, without anyone in HR having to chase.</p>
+              <div class="tech-label text-[10px] text-emerald-400 font-mono">STATUS: RESOLVED</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
+              <div class="tech-label text-[10px] text-rose-400">T-1 &middot; FINAL CUTOFF ALERT</div>
+              <div class="font-semibold text-white">Impact summary before the deadline</div>
+              <p class="text-slate-400 text-[11px]">&ldquo;3 employees will be placed on salary hold if bank details are not provided by 3:00 PM.&rdquo; IFSC and account checks run on every new joiner.</p>
+              <div class="tech-label text-[10px] text-emerald-400 font-mono">STATUS: ZERO BANK REJECTIONS</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Ask Payroll -->
+        <div id="panel-copilot" class="workbench-panel p-6 hidden">
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+            <div class="text-xs text-slate-400">
+              Employees ask in plain language, on WhatsApp or from their payslip link, and get an answer read straight from their own calculation trace. No HR ticket, no guesswork.
+            </div>
+            <div class="p-3 rounded-lg bg-black/40 border border-white/10 text-xs font-mono text-slate-300 space-y-3 leading-relaxed">
+              <div>
+                <span class="text-slate-500">&gt; employee:</span> "Why is my salary lower this month?"<br />
+                <span class="text-emerald-400">&gt; askproso:</span> "You had 3 days of Loss of Pay in October. That reduced Basic and HRA by &#8377;3,900. Your PF and PT are unchanged."
+              </div>
+              <div>
+                <span class="text-slate-500">&gt; employee:</span> "Why was &#8377;200 deducted under PT?"<br />
+                <span class="text-emerald-400">&gt; askproso:</span> "You work out of Maharashtra. Under the Maharashtra State Tax on Professions Act, &#8377;200 is deducted for monthly gross above &#8377;10,000 (&#8377;300 in February)."
+              </div>
+            </div>
+            <div class="text-[10px] font-mono text-slate-500">Answers cite the calculation trace &middot; the AI explains, it never recalculates.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Animated Canvas Divider 2 -->
+  <div class="divider-canvas-container" aria-hidden="true">
+    <canvas class="divider-canvas"></canvas>
+  </div>
+
+  <!-- AI-First Section: AI proposes, Engine calculates, Humans approve -->
+  <section id="features" class="py-24 bg-[#FAFAFC] dark:bg-[#06090F] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0C111C] shadow-sm mb-4">
+          <img src="/img/prosologo-192.png" alt="" width="192" height="182" class="h-4 w-auto" />
+          <span class="tech-label text-[10px] text-slate-700 dark:text-slate-300">POWERED BY ASKPROSO AI</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+          AI Does the Work Around Payroll.<br class="hidden sm:block" /> The Engine Does the Maths.
+        </h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+          Payroll can't afford a model guessing at money. So we split the job: AskProso AI handles the messy, human parts &mdash; data, follow-ups, explanations &mdash; while a deterministic engine computes every rupee and your specialists approve every run.
+        </p>
+      </div>
+
+      <!-- The operating principle -->
+      <div class="grid grid-cols-1 md:grid-cols-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0C111C] overflow-hidden mb-8 shadow-sm">
+        <div class="p-6 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800">
+          <div class="tech-label text-[10px] text-[#E20E3C] dark:text-rose-400 mb-2">01 &middot; AI PROPOSES</div>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Maps your data, drafts reminders, flags anomalies and writes the explanations. It suggests; it never decides.</p>
+        </div>
+        <div class="p-6 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800">
+          <div class="tech-label text-[10px] text-indigo-600 dark:text-indigo-400 mb-2">02 &middot; ENGINE CALCULATES</div>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Every rupee comes from a versioned, testable rule engine in exact paise, with a full trace. No AI inside the maths.</p>
+        </div>
+        <div class="p-6">
+          <div class="tech-label text-[10px] text-emerald-600 dark:text-emerald-400 mb-2">03 &middot; HUMANS APPROVE</div>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Licensed specialists review every run. Changes need explicit confirmation, and everything lands in an immutable audit trail.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="card-tech p-6 rounded-xl">
+          <div class="w-9 h-9 rounded-lg bg-rose-50 dark:bg-rose-950 text-[#E20E3C] flex items-center justify-center mb-4 border border-rose-200/50 dark:border-rose-900/30">
+            <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2">Smart Import</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Upload any Excel. AI maps &ldquo;Emp No&rdquo;, &ldquo;A/C #&rdquo; and &ldquo;Gross Salary&rdquo; to the right fields, tidies dates and spacing, and flags invalid IFSCs or duplicate PANs before a single row is committed.
+          </p>
+        </div>
+
+        <div class="card-tech p-6 rounded-xl">
+          <div class="w-9 h-9 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-600 flex items-center justify-center mb-4 border border-indigo-200/50 dark:border-indigo-900/30">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2">Autonomous Data Chaser</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Tracks readiness every day and drafts polite reminders for missing attendance, PANs and bank details on a T-7 to T-1 schedule, over email and WhatsApp. Your specialist approves in one click.
+          </p>
+        </div>
+
+        <div class="card-tech p-6 rounded-xl">
+          <div class="w-9 h-9 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-600 flex items-center justify-center mb-4 border border-sky-200/50 dark:border-sky-900/30">
+            <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2">Continuous Shadow Payroll</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Draft payroll recalculates in the background whenever an input changes, with a live Health Index. On the 25th you already see how payroll stands &mdash; no surprises on the 30th.
+          </p>
+        </div>
+
+        <div class="card-tech p-6 rounded-xl">
+          <div class="w-9 h-9 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-600 flex items-center justify-center mb-4 border border-amber-200/50 dark:border-amber-900/30">
+            <i data-lucide="activity" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2">Anomaly Radar &amp; Variance Story</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Spots sharp pay swings, duplicate bank accounts, last-minute bank changes and missing PF or ESI. Then explains what changed since last month, and why, in plain English traced to the line item.
+          </p>
+        </div>
+
+        <div class="card-tech p-6 rounded-xl">
+          <div class="w-9 h-9 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center mb-4 border border-emerald-200/50 dark:border-emerald-900/30">
+            <i data-lucide="message-square-code" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2">Explain My Payslip</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Employees ask &ldquo;Why is my salary lower this month?&rdquo; and get a line-by-line answer from their own calculation. Far fewer payslip queries landing on your HR team.
+          </p>
+        </div>
+
+        <div class="card-tech p-6 rounded-xl">
+          <div class="w-9 h-9 rounded-lg bg-violet-50 dark:bg-violet-950 text-payroll-dark dark:text-payroll-light flex items-center justify-center mb-4 border border-violet-200/50 dark:border-violet-900/30">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2">Policies in Plain English</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Describe a pay rule the way you'd tell a colleague. AI drafts it, tests it on sample employees and checks for conflicts. Nothing goes live until a human approves it.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Guardrails -->
+      <div class="mt-8 rounded-2xl bg-slate-950 text-white p-6 sm:p-8 border border-slate-800">
+        <div class="flex items-center gap-2 mb-5">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+          <span class="tech-label text-[10px] text-slate-300">GUARDRAILS THAT MAKE AI SAFE FOR PAYROLL</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs leading-relaxed">
+          <div>
+            <div class="font-display font-bold text-sm mb-1">Never calculates money</div>
+            <p class="text-slate-400">Amounts always come from the deterministic engine. AI narrates the result; it doesn't estimate it.</p>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm mb-1">Never changes pay on its own</div>
+            <p class="text-slate-400">Holds, adjustments and overrides are staged as a before-and-after card. A person confirms, and money-moving changes need step-up verification.</p>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm mb-1">Never sees raw PAN or bank numbers</div>
+            <p class="text-slate-400">Identifiers are masked or tokenised before anything reaches a model, which runs in an India-region deployment.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- The 4-Step Handover Journey (How It Works) -->
+  <section id="how-it-works" class="py-24 bg-white dark:bg-[#080D18] relative border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-rose-50 dark:bg-rose-950/50 text-[#E20E3C] dark:text-rose-400 border border-rose-200 dark:border-rose-900/40 text-xs font-mono mb-3">
+          <span>✦ THE HANDOVER JOURNEY</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+          How Managed Payroll Works in 4 Steps
+        </h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-400 text-sm">
+          Stop wrestling with Excel formulas and tax notices. Your HR team shares the inputs; AskProso AI and our licensed specialists handle the rest.
+        </p>
+      </div>
+
+      <!-- Step Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="card-tech p-6 rounded-2xl relative">
+          <div class="w-10 h-10 rounded-lg bg-rose-50 dark:bg-rose-950/60 text-[#E20E3C] dark:text-rose-400 flex items-center justify-center font-display font-bold text-base mb-4 border border-rose-200/50 dark:border-rose-900/30">
+            01
+          </div>
+          <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">
+            You Hand Over Inputs
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            Drop your monthly Excel or CSV, or push data through our API. AI maps whatever column headers you use and flags bad IFSCs or duplicate PANs before anything is committed.
+          </p>
+          <div class="tech-label text-[10px] text-slate-500 flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+            <span>No template retraining</span>
+          </div>
+        </div>
+        <div class="card-tech p-6 rounded-2xl relative">
+          <div class="w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-display font-bold text-base mb-4 border border-indigo-200/50 dark:border-indigo-900/30">
+            02
+          </div>
+          <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">
+            AI Chases, Engine Calculates
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            Shadow payroll recalculates in the background on every change. The AI Data Chaser reminds your HR about missing bank details or attendance days well before cutoff.
+          </p>
+          <div class="tech-label text-[10px] text-slate-500 flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+            <span>No month-end firefighting</span>
+          </div>
+        </div>
+        <div class="card-tech p-6 rounded-2xl relative">
+          <div class="w-10 h-10 rounded-lg bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center font-display font-bold text-base mb-4 border border-amber-200/50 dark:border-amber-900/30">
+            03
+          </div>
+          <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">
+            Review &amp; Sign Off
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            You get an AI-written summary of what changed since last month and why, with anomalies already flagged. Your finance head approves, with step-up verification on money-moving changes.
+          </p>
+          <div class="tech-label text-[10px] text-slate-500 flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+            <span>Minutes, not days</span>
+          </div>
+        </div>
+        <div class="card-tech p-6 rounded-2xl relative">
+          <div class="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-display font-bold text-base mb-4 border border-emerald-200/50 dark:border-emerald-900/30">
+            04
+          </div>
+          <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-2">
+            Pay, File &amp; Deliver
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            A validated, sealed bank file (HDFC, ICICI, SBI, Axis) is ready to upload. Our team handles PF, ESI, PT and TDS filings, and payslips reach employees as secure links.
+          </p>
+          <div class="tech-label text-[10px] text-slate-500 flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+            <span>Secure payslips delivered</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- India Statutory Compliance -->
+  <section id="compliance" class="py-20 bg-[#FAFAFC] dark:bg-[#06090F] border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-xs font-mono mb-3">
+          <span>✦ INDIA STATUTORY ENGINE</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+          Indian Compliance, Built Into the Engine
+        </h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-400 text-sm">
+          PF, ESI, Professional Tax and TDS are versioned rules with effective dates &mdash; not spreadsheets, and not tribal knowledge.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="card-tech p-5 rounded-xl">
+          <div class="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center mb-3">
+            <i data-lucide="scale" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2">
+            PF, ESI &amp; Professional Tax
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            EPF/EPS split with the &#8377;15,000 wage ceiling (or actual-wage mode), ESI at the &#8377;21,000 threshold with statutory round-up, and state-wise PT slabs across 28 states, including gender and February rules such as Maharashtra's.
+          </p>
+        </div>
+
+        <div class="card-tech p-5 rounded-xl">
+          <div class="w-8 h-8 rounded-lg bg-rose-50 dark:bg-rose-950 text-[#E20E3C] flex items-center justify-center mb-3">
+            <i data-lucide="receipt" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2">
+            TDS, Form 16 &amp; 24Q
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Section 192 projection across the old and new regimes (115BAC), investment declarations and proofs, quarterly 24Q e-TDS returns and digitally signed Form 16 Part A &amp; B.
+          </p>
+        </div>
+
+        <div class="card-tech p-5 rounded-xl">
+          <div class="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-600 flex items-center justify-center mb-3">
+            <i data-lucide="landmark" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2">
+            When the Law Changes, We Update Rules
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            A new rate or slab is published as a reviewed, back-tested rule with an effective date. No software release, no surprises on pay day. AI drafts the change; a human approves it.
+          </p>
+        </div>
+      </div>
+
+      <!-- Compliance calendar chips -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-2.5 text-[11px] font-mono text-slate-600 dark:text-slate-400">
+        <span class="inline-flex items-center gap-1.5 text-slate-500"><i data-lucide="calendar-clock" class="w-3.5 h-3.5"></i> Compliance calendar, tracked for you:</span>
+        <span class="px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0C111C]">PF &middot; 15th</span>
+        <span class="px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0C111C]">ESI &middot; 15th</span>
+        <span class="px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0C111C]">TDS &middot; 7th</span>
+        <span class="px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0C111C]">PT &middot; state due dates</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Animated Canvas Divider 3 -->
+  <div class="divider-canvas-container" aria-hidden="true">
+    <canvas class="divider-canvas"></canvas>
+  </div>
+
+  <!-- Interactive ROI & Savings Calculator Section -->
+  <section id="calculator" class="py-24 bg-white dark:bg-[#080D18] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 text-xs font-mono mb-3">
+          <span>✦ INTERACTIVE ROI CALCULATOR</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+          How Much Do You Save Handing Over Payroll?
+        </h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-400 text-sm">
+          Compare your current cost (in-house payroll salaries + software licences + penalty risk) with AskProso's all-inclusive managed fee.
+        </p>
+      </div>
+
+      <!-- Calculator Card (Architectural Titanium Surface) -->
+      <div class="max-w-4xl mx-auto rounded-2xl bg-white dark:bg-[#0C111C] border border-slate-200 dark:border-slate-800 shadow-lg p-6 sm:p-10">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Left: Sliders -->
+          <div class="space-y-7">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="calc-headcount" class="text-xs font-semibold text-slate-800 dark:text-slate-200 tech-label">
+                  NUMBER OF EMPLOYEES
+                </label>
+                <span id="val-headcount" class="font-mono font-bold text-base text-[#E20E3C]">150</span>
+              </div>
+              <input type="range" id="calc-headcount" min="10" max="1500" step="10" value="150" class="w-full" />
+              <div class="flex justify-between text-[10px] font-mono text-slate-400 mt-1">
+                <span>10</span>
+                <span>500</span>
+                <span>1,500+</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="calc-inhouse-cost" class="text-xs font-semibold text-slate-800 dark:text-slate-200 tech-label">
+                  CURRENT SPEND / EMPLOYEE / MO
+                </label>
+                <span id="val-inhouse" class="font-mono font-bold text-base text-slate-900 dark:text-white">₹650</span>
+              </div>
+              <input type="range" id="calc-inhouse-cost" min="300" max="1500" step="50" value="650" class="w-full" />
+              <div class="flex justify-between text-[10px] font-mono text-slate-400 mt-1">
+                <span>₹300 (Basic)</span>
+                <span>₹650 (Avg In-House + Tool)</span>
+                <span>₹1,500 (Enterprise)</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-xs space-y-1.5 text-slate-600 dark:text-slate-300">
+              <div class="font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-500"></i>
+                <span>Included in AskProso's managed fee:</span>
+              </div>
+              <p>&bull; Dedicated licensed payroll specialist + backup operator</p>
+              <p>&bull; PF, ESI, PT and TDS filings, Form 16 &amp; 24Q</p>
+              <p>&bull; AI data chasing, anomaly review &amp; employee payslip Q&amp;A</p>
+              <p>&bull; Validated, sealed bank files for every pay run</p>
+              <p>&bull; Zero-penalty guarantee on compliance filings</p>
+            </div>
+          </div>
+
+          <!-- Right: Calculated Savings Output -->
+          <div class="flex flex-col justify-between p-6 rounded-xl bg-slate-50 dark:bg-[#080D18] border border-slate-200 dark:border-slate-800/80">
+            <div>
+              <div class="tech-label text-[10px] text-slate-500 mb-1">ESTIMATED ANNUAL NET SAVINGS</div>
+              <div id="roi-annual-savings" class="font-display font-extrabold text-3xl sm:text-4xl text-[#E20E3C] dark:text-rose-400">
+                ₹8,28,000
+              </div>
+              <div class="text-xs text-slate-500 mt-1">Direct operational & software cost reduction</div>
+
+              <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 space-y-2.5 font-mono text-xs">
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">HR Hours Saved / Mo:</span>
+                  <span id="roi-hours-saved" class="font-bold text-slate-900 dark:text-white">84 hrs</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Your Current Monthly Cost:</span>
+                  <span id="roi-current-spend" class="font-bold text-rose-600 dark:text-rose-400">₹97,500</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-500">Proso Managed Fee / Mo:</span>
+                  <span id="roi-proso-spend" class="font-bold text-emerald-600 dark:text-emerald-400">₹28,500</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-800">
+                  <span class="text-slate-500">Statutory Penalty Risk:</span>
+                  <span class="font-bold text-emerald-600 dark:text-emerald-400">₹0 (Guaranteed)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <button type="button" class="open-consultation-modal btn-primary-laser w-full py-3 text-xs">
+                <span>Lock In Your Savings</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1.5"></i>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bank-ready files -->
+  <section class="py-16 bg-[#FAFAFC] dark:bg-[#06090F]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <div class="tech-label text-[10px] text-slate-500 mb-1">BANK-READY SALARY FILES</div>
+        <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">
+          Formatted for Every Major Indian Bank
+        </h3>
+        <p class="mt-2 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+          Each file is validated before release (IFSC, account length, duplicates, control totals) and sealed with a SHA-256 checksum. You authorise payment from your own corporate net banking.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center">
+        <div class="p-3.5 rounded-xl card-tech font-display font-semibold text-xs text-slate-700 dark:text-slate-300 flex items-center justify-center">
+          HDFC Bank
+        </div>
+        <div class="p-3.5 rounded-xl card-tech font-display font-semibold text-xs text-slate-700 dark:text-slate-300 flex items-center justify-center">
+          ICICI Bank
+        </div>
+        <div class="p-3.5 rounded-xl card-tech font-display font-semibold text-xs text-slate-700 dark:text-slate-300 flex items-center justify-center">
+          State Bank of India
+        </div>
+        <div class="p-3.5 rounded-xl card-tech font-display font-semibold text-xs text-slate-700 dark:text-slate-300 flex items-center justify-center">
+          Axis Bank
+        </div>
+        <div class="p-3.5 rounded-xl card-tech font-display font-semibold text-xs text-slate-700 dark:text-slate-300 flex items-center justify-center">
+          Yes Bank
+        </div>
+        <div class="p-3.5 rounded-xl card-tech font-display font-semibold text-xs text-slate-700 dark:text-slate-300 flex items-center justify-center">
+          Generic CSV
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions Accordion -->
+  <section id="faq" class="py-24 bg-white dark:bg-[#080D18] border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-xs font-mono mb-3">
+          <span>✦ GOT QUESTIONS?</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+          Frequently Asked Questions
+        </h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-400 text-sm">
+          Straight answers on AI, compliance, bank files and data security.
+        </p>
+      </div>
+
+      <div class="space-y-3.5">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#0C111C] overflow-hidden">
+          <button type="button" class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4">
+            <span class="font-display font-bold text-sm text-slate-900 dark:text-white">
+              What does &quot;Managed Payroll as a Service&quot; actually mean?
+            </span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-500 transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-4 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/60 dark:border-slate-800/60 pt-3">
+            You no longer buy payroll software for your team to click through and fix. You hand over the payroll journey to us. A dedicated licensed payroll specialist, backed by AskProso AI and our calculation engine, handles your attendance and leave inputs, salary holds, tax deductions, PF/ESI/PT filings and the bank disbursement file. You review one clear summary of what changed and approve it.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#0C111C] overflow-hidden">
+          <button type="button" class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4">
+            <span class="font-display font-bold text-sm text-slate-900 dark:text-white">
+              Where does AI fit in? Can it change my payroll or touch my money?
+            </span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-500 transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-4 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/60 dark:border-slate-800/60 pt-3">
+            AI does the surrounding work: mapping your spreadsheets, chasing missing data, flagging anomalies and explaining results. It <strong>never calculates money and never commits a change on its own</strong>. Every figure comes from our deterministic engine with a full trace. Any change, such as a salary hold or a one-time adjustment, is staged as a before-and-after card that a person must confirm, and money-moving actions need step-up verification. Every suggestion and approval is recorded in an immutable audit trail.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#0C111C] overflow-hidden">
+          <button type="button" class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4">
+            <span class="font-display font-bold text-sm text-slate-900 dark:text-white">
+              What happens if there is a tax notice or statutory penalty?
+            </span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-500 transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-4 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/60 dark:border-slate-800/60 pt-3">
+            We provide a <strong>Zero-Penalty Compliance Guarantee</strong>. As long as your inputs reach us within the agreed monthly cutoff, our licensed bureau takes responsibility for the correctness and timeliness of your PF, ESI, Professional Tax and quarterly 24Q TDS filings.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#0C111C] overflow-hidden">
+          <button type="button" class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4">
+            <span class="font-display font-bold text-sm text-slate-900 dark:text-white">
+              How do you disburse salaries into employee bank accounts?
+            </span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-500 transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-4 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/60 dark:border-slate-800/60 pt-3">
+            We generate a bank-ready disbursement file formatted for HDFC, ICICI, SBI, Axis or Yes Bank (or generic CSV). It is validated before release (IFSC, account length, duplicates, control totals) and sealed with a SHA-256 checksum. You upload and authorise it from your own corporate net banking, so you always stay in control of the money. Direct host-to-host bank payouts are on our roadmap.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#0C111C] overflow-hidden">
+          <button type="button" class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4">
+            <span class="font-display font-bold text-sm text-slate-900 dark:text-white">
+              How is employee data protected under the DPDP Act 2023?
+            </span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-500 transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-4 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/60 dark:border-slate-800/60 pt-3">
+            PAN, bank account numbers and UAN are encrypted at rest (AES-256) and masked everywhere they appear, for example <code class="font-mono">XXXXX1234F</code>. Data is hosted in Azure Central India (Pune) with backups in India. Before anything reaches an AI model, identifiers are masked or tokenised, so raw PAN and bank details are never part of a prompt, and the models themselves run in an India-region deployment.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final High-Conversion CTA Banner -->
+  <section class="py-20 bg-slate-950 text-white relative overflow-hidden border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-5">
+          Ready to Hand Over Your Payroll Journey?
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mb-8 leading-relaxed">
+          Move from month-end firefighting to a payroll that runs itself: AI-first, calculated to the paisa, and owned end to end by licensed specialists.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <button type="button" class="open-consultation-modal btn-primary-laser w-full sm:w-auto px-7 py-3.5 text-sm">
+            Schedule a 15-Minute Migration Call &rarr;
+          </button>
+          <a href="#calculator" class="btn-secondary-titanium w-full sm:w-auto px-6 py-3.5 text-sm">
+            Calculate Your ROI
+          </a>
+        </div>
+        <div class="mt-8 text-xs font-mono text-slate-500 flex items-center justify-center gap-4">
+          <span>✓ Free Historical Audit</span>
+          <span>&middot;</span>
+          <span>✓ 14-Day Migration Window</span>
+          <span>&middot;</span>
+          <span>✓ Dedicated Account Specialist</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Monochrome Titanium Architecture) -->
+  <footer class="bg-[#05080E] text-slate-400 text-xs py-14 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      
+      <div class="space-y-3 lg:col-span-1">
+        <div class="flex items-center gap-2">
+          <img src="/img/paylogo.png" alt="" width="136" height="149" class="h-7 w-auto" />
+          <span class="font-display font-extrabold text-base"><span class="text-white">Ask</span><span class="text-[#FF2E5B]">Proso</span></span>
+          <span class="tech-label text-[10px] font-bold tracking-[0.2em] text-payroll-light">PAYROLL</span>
+        </div>
+        <p class="leading-relaxed text-slate-500 text-[11px]">
+          AI-first managed payroll for India. A deterministic engine, AskProso AI and licensed specialists, working as one bureau.
+        </p>
+        <div class="flex items-center gap-2 font-mono text-[10px] text-emerald-400">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Hosted in India &middot; Azure Pune</span>
+        </div>
+        <div class="pt-3">
+          <a href="https://www.proso.ai" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 pr-4 rounded-xl border border-slate-800 bg-slate-950/80 hover:border-[#E20E3C]/50 transition-colors">
+            <span class="flex items-center justify-center w-14 h-14 rounded-l-xl bg-white/[0.04] border-r border-slate-800">
+              <img src="/img/prosologo-192.png" alt="Proso" width="192" height="182" class="h-8 w-auto transition-transform duration-300 group-hover:scale-110" />
+            </span>
+            <span class="leading-tight">
+              <span class="block text-[10px] font-mono text-slate-500 whitespace-nowrap">A Proso.ai company</span>
+              <span class="block font-display font-bold text-sm text-white whitespace-nowrap">Proso <span class="text-[#FF2E5B]">AI</span></span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-white mb-3 tech-label text-[10px]">PROSO ECOSYSTEM</h4>
+        <ul class="space-y-2 text-[11px]">
+          <li>
+            <a href="https://www.proso.ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span class="text-white group-hover:underline">proso.ai</span>
+              <span class="text-[9px] px-1 py-0.2 rounded bg-slate-800/80 text-slate-400 font-mono">Platform</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.askproso.ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E20E3C]"></span>
+              <span class="text-white group-hover:underline">askproso.ai</span>
+              <span class="text-[9px] px-1 py-0.2 rounded bg-slate-800/80 text-slate-400 font-mono">Enterprise AI</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://workkudo.ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+              <span class="text-white group-hover:underline">workkudo.ai</span>
+              <span class="text-[9px] px-1 py-0.2 rounded bg-slate-800/80 text-slate-400 font-mono">Workplace</span>
+            </a>
+          </li>
+          <li class="pt-2 border-t border-slate-900">
+            <a href="https://www.proso.ai/contact-us" target="_blank" rel="noopener noreferrer" class="text-rose-400 hover:text-rose-300 font-medium transition-colors flex items-center gap-1">
+              <span>Contact Us (Proso.ai)</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-white mb-3 tech-label text-[10px]">SERVICE SCOPE</h4>
+        <ul class="space-y-2 text-[11px]">
+          <li><a href="#how-it-works" class="hover:text-white transition-colors">Managed Payroll Journey</a></li>
+          <li><a href="#simulation" class="hover:text-white transition-colors">Continuous Shadow Runs</a></li>
+          <li><a href="#features" class="hover:text-white transition-colors">Autonomous Data Chaser</a></li>
+          <li><a href="#features" class="hover:text-white transition-colors">Explain My Payslip AI</a></li>
+          <li><a href="#compliance" class="hover:text-white transition-colors">Indian Statutory Pack</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-white mb-3 tech-label text-[10px]">INDIA COVERAGE</h4>
+        <ul class="space-y-2 text-[11px]">
+          <li><span class="text-white">🇮🇳 India</span> (Live)</li>
+          <li><span class="text-slate-300">PF &middot; ESI &middot; PT &middot; TDS</span></li>
+          <li><span class="text-slate-300">HDFC &middot; ICICI &middot; SBI &middot; Axis</span></li>
+          <li><a href="#calculator" class="hover:text-white transition-colors">ROI Calculator</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">Compliance FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-white mb-3 tech-label text-[10px]">LEGAL & TRUST</h4>
+        <ul class="space-y-2 text-[11px]">
+          <li>DPDP Act 2023 Compliant</li>
+          <li>Azure Central India (Pune) Residency</li>
+          <li>AES-256 Encryption at Rest</li>
+          <li>No raw PAN / bank data sent to AI</li>
+          <li class="pt-1.5 flex flex-col gap-1">
+            <a href="https://www.askproso.ai/privacy/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors flex items-center justify-between">
+              <span>Privacy Policy</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-slate-500"></i>
+            </a>
+            <a href="https://www.askproso.ai/terms/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors flex items-center justify-between">
+              <span>Terms of Service</span>
+              <i data-lucide="external-link" class="w-3 h-3 text-slate-500"></i>
+            </a>
+          </li>
+          <li class="pt-1">
+            <span class="text-slate-500">Bureau Ops:</span> <br />
+            <a href="mailto:payroll@askproso.ai" class="text-rose-400 hover:underline">payroll@askproso.ai</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-slate-900 text-center flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+      <div class="flex items-center gap-2.5">
+        <img src="/img/prosologo-192.png" alt="" width="192" height="182" class="h-4 w-auto opacity-90" />
+        <span>&copy; 2026 Proso AI &middot; AskProso Technologies Pvt. Ltd. All rights reserved.</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+        <a href="https://www.proso.ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors font-medium">proso.ai</a>
+        <span class="text-slate-800">&middot;</span>
+        <a href="https://www.askproso.ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors font-medium">askproso.ai</a>
+        <span class="text-slate-800">&middot;</span>
+        <a href="https://workkudo.ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors font-medium">workkudo.ai</a>
+        <span class="text-slate-800">&middot;</span>
+        <a href="https://www.proso.ai/contact-us" target="_blank" rel="noopener noreferrer" class="text-rose-400 hover:underline transition-colors font-medium">Contact Us</a>
+        <span class="text-slate-800">&middot;</span>
+        <a href="https://www.askproso.ai/privacy/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Privacy Policy</a>
+        <span class="text-slate-800">&middot;</span>
+        <a href="https://www.askproso.ai/terms/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Consultation & Migration Modal -->
+  <div id="consultation-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white dark:bg-[#0C111C] border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
+      
+      <!-- Close Button -->
+      <button type="button" class="close-consultation-modal absolute top-5 right-5 p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-white">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="mb-5">
+        <img src="/img/paylogo.png" alt="" width="136" height="149" class="h-9 w-auto mb-2" />
+        <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">
+          Hand Over Your Payroll
+        </h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          Tell us about your organization. A payroll specialist will walk you through a live migration plan in 15 minutes.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form id="consultation-form" class="space-y-3.5">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Work Email</label>
+          <input type="email" required placeholder="you@company.com" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Company Name</label>
+            <input type="text" required placeholder="Acme Logistics" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Team Size</label>
+            <select class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]">
+              <option>10 - 50 employees</option>
+              <option>51 - 250 employees</option>
+              <option>251 - 1,000 employees</option>
+              <option>1,000+ employees</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">How Do You Run Payroll Today?</label>
+          <select class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]">
+            <option>In-house team using Excel</option>
+            <option>In-house team using payroll software / HRMS</option>
+            <option>Another payroll bureau or CA firm</option>
+            <option>Setting up a new company</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Current Payroll Pain Point (Optional)</label>
+          <textarea rows="2" placeholder="e.g. Month-end delays, PF/PT notices, employee queries..." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary-laser w-full py-3 text-xs">
+          Book 15-Min Walkthrough &rarr;
+        </button>
+
+        <p class="text-[10px] text-center text-slate-400 font-mono leading-relaxed">
+          🔒 Zero spam. We sign an NDA before reviewing any payroll data. <br />
+          Enterprise solutions &amp; custom inquiries: <a href="https://www.proso.ai/contact-us" target="_blank" rel="noopener noreferrer" class="underline hover:text-white text-[#E20E3C]">proso.ai/contact-us &rarr;</a>
+        </p>
+      </form>
+
+      <!-- Success State -->
+      <div id="modal-success-state" class="hidden text-center py-6 space-y-2">
+        <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center mx-auto text-xl">
+          ✓
+        </div>
+        <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Walkthrough Scheduled!</h4>
+        <p class="text-xs text-slate-500 max-w-xs mx-auto">
+          Our senior payroll bureau lead will reach out to your work email within 2 business hours with a calendar invite.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="./app.js"></script>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

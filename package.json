@@ -1,0 +1,15 @@
+{
+  "name": "payroll-askproso-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Payroll by AskProso — Fully Managed AI-Augmented Payroll as a Service",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.3.4"
+  }
+}
