@@ -563,3 +563,39 @@ function initConsultationModal() {
     });
   }
 }
+
+/* --------------------------------------------------------------------------
+   Product tour (real screenshots)
+   -------------------------------------------------------------------------- */
+(function initProductTour() {
+  const tabs = document.querySelectorAll('.tour-tab');
+  const img = document.getElementById('tour-img');
+  if (!tabs.length || !img) return;
+  const title = document.getElementById('tour-title');
+  const text = document.getElementById('tour-text');
+  const url = document.getElementById('tour-url');
+  const screens = {
+    'home': ['home', 'An AI briefing, not a dashboard to decode', 'Home opens with the open runs, what blocks approval and what needs review, written by the AI from checks the code ran. Ask a question right under it.'],
+    'pay-run': ['payroll / november-2026', 'Review every employee before anyone approves', 'The run moves through inputs, calculation, review, approval, finalize, bank file and paid. Blocking problems and sign-offs are listed in plain words, and a second person approves.'],
+    'statutory': ['payroll / statutory-files', 'PF, ESI and TDS files, checked before you upload', 'Each file says what is ready, who is left out and why, and what to fix, with the missing ESI numbers named one by one.'],
+    'people': ['people / employees', 'Everyone, with sensitive fields masked', 'PAN and bank numbers are masked on screen. A count of who is ready for payroll and who is missing details sits above the list.'],
+    'reports': ['reports / reports-centre', '23 reports read from what each run stored', 'Payroll register, cost by department, liability summary, loss of pay and more. A report always agrees with the run behind it.'],
+    'what-if': ['plan / what-if', 'Try a change before you make it', 'Describe who in your own words, pick a change, and see the effect on pay, tax and company cost for the month and the rest of the year. Nothing is saved.'],
+    'mission-control': ['clients / mission-control', 'For managed payroll: every client at a glance', 'Our specialists see each client’s run stage, health score, cut-off countdown and blockers, most urgent first.'],
+  };
+  const show = (key) => {
+    const [path, t, d] = screens[key];
+    img.src = `/img/app/${key}.jpg`;
+    img.alt = `${t}: screenshot of the AskProso Payroll app`;
+    title.textContent = t;
+    text.textContent = d;
+    url.textContent = `payroll.askproso.ai / ${path}`;
+    tabs.forEach((b) => {
+      const on = b.dataset.tour === key;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  };
+  tabs.forEach((b) => b.addEventListener('click', () => show(b.dataset.tour)));
+  show('home');
+})();
