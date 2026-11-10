@@ -172,7 +172,8 @@ npm run preview   # serve the production build locally
 
 ```
 paysite/
-├── index.html        # The whole page: sections, copy, Tailwind config
+├── index.html        # The home page: sections, copy, Tailwind config
+├── features.html     # The platform features page (compliance, attendance, finance, letters, ESS, MSS, admin, security, groups)
 ├── styles.css        # Design tokens, light/dark themes, buttons, canvas & slider styling
 ├── app.js            # Theme, hero canvas, live engine simulator, ROI calculator, FAQ, modal
 ├── img/

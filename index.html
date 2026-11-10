@@ -120,6 +120,7 @@
             <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
           </span>
         </a>
+        <a href="./features.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-white/[0.06] hover:text-slate-950 dark:hover:text-white transition-all">Platform Features</a>
         <a href="#features" class="px-3 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-white/[0.06] hover:text-slate-950 dark:hover:text-white transition-all">
           AI &amp; Engine
         </a>
@@ -170,6 +171,7 @@
           <span class="inline-flex items-center gap-1 text-[10px] font-mono font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">LIVE</span>
         </a>
         <a href="#simulation" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors">Engine Preview</a>
+        <a href="./features.html" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors">Platform Features</a>
         <a href="#features" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors">AI &amp; Engine</a>
         <a href="#how-it-works" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors">How It Works</a>
         <a href="#compliance" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors">Compliance</a>
@@ -289,9 +291,9 @@
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Sign in with your Microsoft work account, bring your employees in from a spreadsheet, the API or your directory, and run payroll each month from one screen.</p>
           <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300">
             <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i>Owner, HR manager and custom roles, with a second person approving every run</li>
-            <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i>Employee self-service portal: payslips, tax declarations, claims and leave</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i>Employee and manager self-service: payslips, tax, claims, leave, attendance with punch-in and corrections, letters and approvals</li>
             <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i>An assistant on every screen that explains what you see and looks things up</li>
-            <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i>REST API with per-company keys for employees and attendance</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i>REST API with per-company keys for employees, attendance (monthly or daily punches), leave and the finance journal</li>
           </ul>
         </div>
         <div class="card-tech rounded-2xl p-7 border-[#E20E3C]/30">
@@ -433,7 +435,7 @@
               <div class="text-xs text-slate-300 space-y-2 leading-relaxed">
                 <p>• <strong>Net Payout delta:</strong> +₹8,42,100 (+4.8% MoM). Driven by 12 mid-month joiners in Mumbai fulfillment hub and annual appraisals for the engineering cohort.</p>
                 <p>• <strong>Anomaly flagged:</strong> 1 negative net pay case (Imran Qureshi, E1007) caught by the engine's safety guard and placed on salary hold by your payroll specialist, keeping your ICICI bank file clean.</p>
-                <p>• <strong>Statutory status:</strong> Maharashtra &amp; Gujarat PT slabs applied without variance. PF wages capped at the ₹15,000 ceiling where applicable.</p>
+                <p>• <strong>Statutory status:</strong> Maharashtra &amp; Gujarat PT slabs applied without variance. PF wages capped at the statutory ceiling in force for the month.</p>
               </div>
               <div class="pt-3 border-t border-white/10 flex items-center justify-between">
                 <span class="text-xs text-slate-400">Ready for disbursement on 31 Oct 2026</span>
@@ -804,7 +806,7 @@
             PF, ESI &amp; Professional Tax
           </h3>
           <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            EPF/EPS split with the &#8377;15,000 wage ceiling (or actual-wage mode), ESI at the &#8377;21,000 threshold with statutory round-up, and state-wise professional tax slabs, with gender and February rules such as Maharashtra's. States are added as each is verified.
+            EPF/EPS split with the &#8377;25,000 wage ceiling from 17 September 2026 (&#8377;15,000 for earlier months, or actual-wage mode), voluntary PF and international workers, the labour-code wage definition, ESI at the &#8377;21,000 threshold with statutory round-up, and state-wise professional tax slabs, with gender and February rules such as Maharashtra's. States are added as each is verified.
           </p>
         </div>
 
@@ -813,10 +815,10 @@
             <i data-lucide="receipt" class="w-4 h-4"></i>
           </div>
           <h3 class="font-display font-bold text-sm text-slate-900 dark:text-white mb-2">
-            TDS, Form 16 &amp; 24Q
+            TDS, Form 130 &amp; Form 138
           </h3>
           <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            Section 192 projection across the old and new regimes (115BAC), investment declarations and proofs, and TDS deduction details prepared for Form 24Q. Form 16 certificates are generated as a PDF for each employee from the year&rsquo;s finalized runs.
+            Section 192 projection across the old and new regimes for FY 2026-27, investment declarations and proofs, challan tracking and the quarterly return file (Form 138, formerly 24Q) for validation in the FVU utility. Form 130 (formerly Form 16) is generated as a PDF for each employee from the year&rsquo;s finalized runs.
           </p>
         </div>
 
@@ -840,6 +842,11 @@
         <span class="px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0C111C]">ESI &middot; 15th</span>
         <span class="px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0C111C]">TDS &middot; 7th</span>
         <span class="px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0C111C]">PT &middot; state due dates</span>
+      </div>
+
+      <div class="mt-6 text-center">
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono max-w-2xl mx-auto mb-4">Built for the labour codes and the Income-tax Act 2025. Each rule carries its effective date and source, and your adviser can review them before go-live.</p>
+        <a href="./features.html#compliance" class="btn-secondary-titanium inline-flex items-center gap-2 px-6 py-3 text-sm">See every compliance feature, attendance, finance, ESS, MSS and security &rarr;</a>
       </div>
 
     </div>
@@ -909,7 +916,7 @@
                 <span>Included in AskProso's managed fee:</span>
               </div>
               <p>&bull; Dedicated licensed payroll specialist + backup operator</p>
-              <p>&bull; PF, ESI, PT and TDS filings, Form 16 &amp; 24Q</p>
+              <p>&bull; PF, ESI, PT and TDS filings, Form 130 &amp; Form 138 (Form 16 &amp; 24Q)</p>
               <p>&bull; AI data chasing, anomaly review &amp; employee payslip Q&amp;A</p>
               <p>&bull; Validated, sealed bank files for every pay run</p>
               <p>&bull; Zero-penalty guarantee on compliance filings</p>
@@ -1170,6 +1177,7 @@
           <li><a href="#models" class="hover:text-white transition-colors">Payroll SaaS</a></li>
           <li><a href="#product" class="hover:text-white transition-colors">Product Tour</a></li>
           <li><a href="#features" class="hover:text-white transition-colors">AI Briefing &amp; Assistant</a></li>
+          <li><a href="./features.html" class="hover:text-white transition-colors">All Platform Features</a></li>
           <li><a href="#compliance" class="hover:text-white transition-colors">Indian Statutory Pack</a></li>
         </ul>
       </div>
