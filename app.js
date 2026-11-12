@@ -1,5 +1,5 @@
 /**
- * Payroll by AskProso — Modern Interactive Application Engine
+ * AskProso Payroll — Modern Interactive Application Engine
  * Combines Cursor.com's technical responsiveness with Guild.ai's
  * alive generative canvas physics and autonomous simulation.
  */
@@ -589,7 +589,7 @@ function initConsultationModal() {
     img.alt = `${t}: screenshot of the AskProso Payroll app`;
     title.textContent = t;
     text.textContent = d;
-    url.textContent = `payroll.askproso.ai / ${path}`;
+    url.textContent = `pay.askproso.ai / ${path}`;
     tabs.forEach((b) => {
       const on = b.dataset.tour === key;
       b.classList.toggle('active', on);

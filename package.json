@@ -2,7 +2,7 @@
   "name": "payroll-askproso-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Payroll by AskProso — AI-first managed payroll for India (marketing site)",
+  "description": "AskProso Payroll — AI-first managed payroll for India (marketing site)",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,5 +12,5 @@
   "devDependencies": {
     "vite": "^8.3.4"
   },
-  "homepage": "https://pay.askproso.com"
+  "homepage": "https://pay.askproso.ai"
 }

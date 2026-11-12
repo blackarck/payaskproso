@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>AskProso Payroll: one page</title>
+<style>
+@page{size:A4;margin:0}
+html{width:210mm;height:297mm;overflow:hidden}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ruby:#E20E3C;--ink:#0b1020;--mut:#566074;--line:#e3e6ee;--tint:#f6f7fb;--indigo:#4f46e5;--green:#059669}
+body{width:210mm;height:297mm;font-family:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);font-size:9.4pt;line-height:1.38;background:#fff;overflow:hidden}
+.top{overflow:hidden;background:linear-gradient(135deg,#0b1020 0%,#161d38 100%);color:#fff;padding:8mm 13mm 6.5mm;position:relative}
+.top:after{content:"";position:absolute;right:-20mm;top:-24mm;width:90mm;height:90mm;border-radius:50%;background:radial-gradient(circle,rgba(226,14,60,.38),transparent 68%)}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:16pt;letter-spacing:-.02em;position:relative;z-index:1}
+.brand b{color:#ff2e5b}.brand small{font-size:8pt;letter-spacing:.22em;font-weight:700;color:#cbd2e6;border-left:1px solid #46506e;padding-left:9px;margin-left:2px}
+.brand img{height:24px}
+h1{font-size:23pt;line-height:1.06;letter-spacing:-.03em;font-weight:800;margin-top:5mm;position:relative;z-index:1;max-width:150mm}
+h1 em{font-style:normal;color:#ff4d73}
+.sub{margin-top:2.6mm;color:#cbd2e6;font-size:10pt;max-width:152mm;position:relative;z-index:1}
+.wrap{padding:5mm 13mm 0}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.trio div{padding:3mm 3.6mm}.trio div+div{border-left:1px solid var(--line)}
+.k{font-size:6.6pt;font-weight:800;letter-spacing:.16em;margin-bottom:1.2mm}
+.trio p{font-size:8.6pt;color:var(--mut)}
+h2{font-size:10.5pt;letter-spacing:-.01em;margin:4mm 0 2mm;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.6mm}
+.m{border:1px solid var(--line);border-radius:8px;padding:2.4mm 2.8mm 2.6mm;background:#fff}
+.m b{display:block;font-size:8.8pt;margin-bottom:.9mm}.m span{font-size:7.9pt;color:var(--mut);display:block;line-height:1.32}
+.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ruby);margin-right:5px}
+.new{margin-top:4mm;border:1px solid #f3c6d0;background:#fff6f8;border-radius:10px;padding:3.4mm 4.2mm;display:grid;grid-template-columns:1.15fr 1fr;gap:5mm}
+.new h3{font-size:11pt;font-weight:800;letter-spacing:-.01em}
+.tag{display:inline-block;font-size:6.6pt;font-weight:800;letter-spacing:.14em;color:var(--ruby);margin-bottom:1.2mm}
+.new ul{list-style:none;margin-top:2mm}.new li{font-size:8.5pt;color:#30384c;padding-left:4mm;position:relative;margin-bottom:1.3mm}
+.new li:before{content:"";position:absolute;left:0;top:.45em;width:5px;height:5px;border-radius:50%;background:var(--green)}
+table{width:100%;border-collapse:collapse;font-size:7.8pt;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+th{background:var(--tint);color:var(--mut);text-align:right;font-weight:700;padding:1.4mm 2mm}th:first-child,td:first-child{text-align:left}
+td{padding:1.3mm 2mm;text-align:right;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+td.hl{font-weight:800;color:var(--ruby)}tr.bal td{background:#eef0ff}tr.tot td{font-weight:800;background:var(--tint)}
+.cap{font-size:7pt;color:var(--mut);margin-top:1.4mm}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:2.6mm}
+.box{border:1px solid var(--line);border-radius:8px;padding:2.4mm 3.2mm}
+.box b{font-size:9pt}.box p{font-size:8pt;color:var(--mut);margin-top:.8mm}
+.chips{display:flex;flex-wrap:wrap;gap:1.6mm;margin-top:1.6mm}
+.chips i{font-style:normal;font-size:7.4pt;font-weight:600;border:1px solid var(--line);background:var(--tint);border-radius:99px;padding:.7mm 2.4mm;color:#30384c}
+.foot{position:absolute;left:0;right:0;bottom:0;background:var(--ruby);color:#fff;padding:3.8mm 13mm;display:flex;justify-content:space-between;align-items:center}
+.foot b{font-size:11.5pt;letter-spacing:-.01em}.foot span{font-size:8.4pt;opacity:.95}
+.fine{position:absolute;left:13mm;right:13mm;bottom:17.5mm;font-size:6.3pt;color:#8a93a8}
+</style></head><body>
+<div class="top">
+  <div class="brand"><img src="img/paylogo.png" alt=""><span>Ask<b>Proso</b></span><small>PAYROLL</small></div>
+  <h1>Payroll that runs itself.<br><em>Run it yourself, or let us.</em></h1>
+  <p class="sub">AI-first payroll for India, as software or fully managed. A deterministic engine calculates every rupee, AskProso AI chases, flags and explains, and a person approves every run.</p>
+</div>
+<div class="wrap">
+  <div class="trio">
+    <div><div class="k" style="color:var(--ruby)">01 · AI PROPOSES</div><p>Maps your data, flags anomalies, drafts reminders and explains payslips. Never calculates or decides.</p></div>
+    <div><div class="k" style="color:var(--indigo)">02 · ENGINE CALCULATES</div><p>Versioned, effective-dated rules in exact paise, with a trace behind every figure.</p></div>
+    <div><div class="k" style="color:var(--green)">03 · HUMANS APPROVE</div><p>Maker and checker, recent sign-in for money actions, and an audit trail of who changed what.</p></div>
+  </div>
+
+  <h2>One platform, from joining to final settlement</h2>
+  <div class="grid">
+    <div class="m"><b><i class="dot"></i>Payroll &amp; statutory</b><span>PF, EPS, ESI, PT, LWF, TDS, Form 130 and 138, labour-code wage check, compliance calendar.</span></div>
+    <div class="m"><b><i class="dot"></i>Attendance &amp; leave</b><span>Daily attendance, shifts, overtime rules and leave. Loss of pay reaches the run.</span></div>
+    <div class="m"><b><i class="dot"></i>Salary &amp; arrears</b><span>Raises per person, balance to CTC, arrears shown month by month.</span></div>
+    <div class="m"><b><i class="dot"></i>Finance &amp; bank</b><span>Journal for Tally and Zoho Books. Bank files for HDFC, ICICI or your layout.</span></div>
+    <div class="m"><b><i class="dot"></i>Letters</b><span>Offer, relieving, experience and salary letters with a public verification code.</span></div>
+    <div class="m"><b><i class="dot"></i>Self-service</b><span>Payslips, tax declarations, claims and punch-in on a phone. Managers approve in the same place.</span></div>
+    <div class="m"><b><i class="dot"></i>AskProso assistant</b><span>Ask in plain words. It prepares changes on a card and waits for Confirm.</span></div>
+    <div class="m"><b><i class="dot"></i>Reports &amp; what-if</b><span>Register, liability and TDS reports. Try a raise on real data before saving.</span></div>
+  </div>
+
+  <div class="new">
+    <div>
+      <span class="tag">NEW · SALARY CHANGES</span>
+      <h3>A raise that fits the person, not just the percentage</h3>
+      <ul>
+        <li><b>The structure suggests, HR decides.</b> Set Basic, HRA or any fixed earning for one person.</li>
+        <li><b>Nothing is lost.</b> The Special Allowance balances to CTC and “still to place” shows what is left.</li>
+        <li><b>Arrears you can read.</b> Each paid month recalculated by component, on screen and on the payslip.</li>
+      </ul>
+    </div>
+    <div>
+      <table>
+        <tr><th>Per month</th><th>Now</th><th>Suggested</th><th>New</th></tr>
+        <tr><td>Basic</td><td>40,000</td><td>44,000</td><td class="hl">45,000</td></tr>
+        <tr><td>HRA</td><td>16,000</td><td>17,600</td><td>18,000</td></tr>
+        <tr class="bal"><td>Special allowance</td><td>44,000</td><td>48,400</td><td>47,000</td></tr>
+        <tr class="tot"><td>Monthly CTC</td><td>1,00,000</td><td>1,10,000</td><td>1,10,000</td></tr>
+      </table>
+      <div class="cap">Illustrative: CTC ₹12,00,000 to ₹13,20,000. ₹3,000 a month is still to place.</div>
+    </div>
+  </div>
+
+  <h2>Built for India</h2>
+  <div class="chips"><i>PF / EPS / VPF</i><i>ESI</i><i>Professional tax by state</i><i>LWF</i><i>TDS, Section 192</i><i>Form 130 (16) · 138 (24Q)</i><i>Labour codes</i><i>Income-tax Act 2025</i><i>Arrears with PF, ESI, PT</i><i>Final settlement &amp; gratuity</i></div>
+
+  <div class="four" style="margin-top:3.6mm">
+    <div class="box"><b>Use it as software</b><p>Your team runs payroll from one screen. Import from a sheet, the API or your directory.</p></div>
+    <div class="box"><b>Or have it managed</b><p>A payroll specialist runs the month. You review one summary and approve.</p></div>
+    <div class="box"><b>Private by design</b><p>Hosted in India. PAN and bank details encrypted; none sent raw to an AI model.</p></div>
+    <div class="box"><b>Switch mid-year</b><p>Bring in earnings and tax from your old provider. Several legal entities supported.</p></div>
+  </div>
+</div>
+<div class="fine">Statutory figures and file layouts are versioned rules with source notes; those not yet confirmed by an adviser are marked in the product. Figures shown are illustrative.</div>
+<div class="foot"><div><b>Book a 15-minute walkthrough</b><br><span>We sign an NDA before reviewing any payroll data.</span></div><div style="text-align:right"><b>pay.askproso.ai</b><br><span>payroll@askproso.ai · A Proso.ai company</span></div></div>
+</body></html>

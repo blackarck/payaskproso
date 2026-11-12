@@ -2,12 +2,12 @@
 
 <img src="img/paylogo.png" alt="AskProso Payroll" height="84" />
 
-# Payroll by AskProso
+# AskProso Payroll
 
 ### AI-first managed payroll for India.
 **Hand over your entire payroll journey. We run it. You relax.**
 
-[![Live site](https://img.shields.io/badge/live-pay.askproso.com-E20E3C?style=for-the-badge&logo=googlechrome&logoColor=white)](https://pay.askproso.com)
+[![Live site](https://img.shields.io/badge/live-pay.askproso.ai-E20E3C?style=for-the-badge&logo=googlechrome&logoColor=white)](https://pay.askproso.ai)
 &nbsp;
 ![Made for India](https://img.shields.io/badge/made%20for-India%20%F0%9F%87%AE%F0%9F%87%B3-10B981?style=for-the-badge)
 &nbsp;
@@ -20,14 +20,14 @@
 
 <br />
 
-<a href="https://pay.askproso.com">
+<a href="https://pay.askproso.ai">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="screenshots/hero-dark.png" />
-    <img src="screenshots/hero-light.png" alt="Payroll by AskProso landing page" width="900" />
+    <img src="screenshots/hero-light.png" alt="AskProso Payroll landing page" width="900" />
   </picture>
 </a>
 
-**[Visit the live site &rarr; pay.askproso.com](https://pay.askproso.com)**
+**[Visit the live site &rarr; pay.askproso.ai](https://pay.askproso.ai)**
 
 </div>
 
@@ -35,7 +35,7 @@
 
 ## What this is
 
-The marketing site for **Payroll by AskProso**: a fully managed payroll service for Indian businesses, powered by [AskProso](https://www.askproso.ai) AI and run by licensed payroll specialists.
+The marketing site for **AskProso Payroll**: a fully managed payroll service for Indian businesses, powered by [AskProso](https://www.askproso.ai) AI and run by licensed payroll specialists.
 
 Most payroll software hands you a dashboard and wishes you luck on the 30th. We take the whole month-end off your plate: **a deterministic engine calculates every rupee to the paisa, AI does the chasing, flagging and explaining, and a human approves every run.**
 
@@ -52,6 +52,10 @@ This repo is the site itself: a fast, hand-crafted static page with a live inter
 | ✅ **Humans approve** | Licensed payroll specialists | Review every run. Changes need explicit confirmation, with step-up verification on money-moving actions and an immutable audit trail. |
 
 The site is built around that story, and it's the reason the AI is safe to trust with payroll.
+
+## What changed on 2026-11-12
+
+The site now follows the order a buyer thinks in: the problem, the two ways to run it, one platform with eight modules, the product tour, a spotlight on **salary changes that fit the person** (components set per person, the Special Allowance that balances, arrears with a readable working), then the AI section, a **comparison** with spreadsheets and typical payroll software, and the compliance, ROI and FAQ sections. `features.html` has a new **Salary changes and arrears** section and cards for due-date reminders, the setup coach, company notes and per-action autonomy. The one-page PDF for sending out is `public/AskProso-Payroll-OnePager.pdf` (source `onepager.html`). Figures in the mock-ups are illustrative.
 
 ## What's on the page
 
@@ -193,9 +197,9 @@ Everything in the live preview (Kesari Logistics, the 412 employees, the ₹ amo
 
 <p>
   <img src="img/prosologo-192.png" alt="Proso" height="44" align="left" />
-  &nbsp;<b>Payroll by AskProso</b> is built by <a href="https://www.proso.ai">Proso.ai</a>. See also
+  &nbsp;<b>AskProso Payroll</b> is built by <a href="https://www.proso.ai">Proso.ai</a>. See also
   <a href="https://www.askproso.ai">AskProso</a> (enterprise AI) and <a href="https://workkudo.ai">Workkudo</a> (workplace).
-  <br />&nbsp;Questions, or want to hand over your payroll? <a href="https://www.proso.ai/contact-us">Get in touch</a> or visit <a href="https://pay.askproso.com">pay.askproso.com</a>.
+  <br />&nbsp;Questions, or want to hand over your payroll? <a href="https://www.proso.ai/contact-us">Get in touch</a> or visit <a href="https://pay.askproso.ai">pay.askproso.ai</a>.
 </p>
 
 <br clear="left" />
