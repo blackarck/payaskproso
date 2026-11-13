@@ -1,0 +1,41 @@
+# pay.askproso.ai: marketing site. Everything here is public and meant to be found,
+# by search engines, AI search/answer engines and AI agents alike.
+
+User-agent: *
+Allow: /
+
+# AI search, answer and agent crawlers: explicitly welcome.
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: MistralAI-User
+Allow: /
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://pay.askproso.ai/sitemap.xml

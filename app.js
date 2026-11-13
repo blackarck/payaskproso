@@ -547,8 +547,18 @@ function initConsultationModal() {
   });
 
   if (form) {
+    // There is no lead endpoint on this static site, so the form prepares an email to the sales inbox instead of
+    // pretending to submit: nothing is stored here, and the visitor sends it from their own mail app.
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      const d = new FormData(form);
+      const line = (label, key) => `${label}: ${String(d.get(key) || '').trim().slice(0, 1000)}`;
+      const body = [
+        line('Work email', 'email'), line('Company', 'company'), line('Team size', 'team_size'),
+        line('Payroll today', 'payroll_today'), line('Pain point', 'pain_point'),
+      ].join('\n');
+      window.location.href = 'mailto:payroll@askproso.ai?subject=' + encodeURIComponent('Payroll walkthrough request') +
+        '&body=' + encodeURIComponent(body);
       form.classList.add('hidden');
       if (successState) successState.classList.remove('hidden');
 
@@ -559,7 +569,7 @@ function initConsultationModal() {
           if (successState) successState.classList.add('hidden');
           form.reset();
         }, 300);
-      }, 2500);
+      }, 12000);
     });
   }
 }

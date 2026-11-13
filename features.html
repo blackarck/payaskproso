@@ -3,50 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Features: salary changes, compliance, attendance, finance, ESS, MSS and security | AskProso Payroll</title>
+  <title>AskProso Payroll features: compliance, attendance, salary changes, finance, self-service, security</title>
   <meta name="description" content="Everything in AskProso Payroll (pay.askproso.ai): India statutory compliance (labour codes, Income-tax Act 2025, PF, ESI, PT, TDS returns), daily attendance and overtime, finance integration, letters, employee and manager self-service, admin controls, roles and security." />
   <link rel="icon" type="image/png" href="/img/paylogo.png">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              ruby: '#E20E3C',
-              'ruby-dark': '#B50B30',
-              'ruby-light': '#FF2E5B',
-              'ruby-subtle': 'rgba(226, 14, 60, 0.08)',
-            },
-            payroll: {
-              DEFAULT: '#9C68BB',
-              dark: '#7E4BA3',
-              light: '#C39BE0',
-            },
-            accent: {
-              indigo: '#6366F1',
-              emerald: '#10B981',
-              amber: '#F59E0B',
-              cyan: '#06B6D4'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          }
-        }
+  <link rel="apple-touch-icon" href="/img/paylogo.png">
+  <link rel="canonical" href="https://pay.askproso.ai/features.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#E20E3C" />
+  <meta name="author" content="AskProso Technologies Pvt. Ltd." />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AskProso Payroll" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:url" content="https://pay.askproso.ai/features.html" />
+  <meta property="og:title" content="AskProso Payroll features: compliance, attendance, salary changes, finance, self-service, security" />
+  <meta property="og:description" content="Everything in AskProso Payroll (pay.askproso.ai): India statutory compliance (labour codes, Income-tax Act 2025, PF, ESI, PT, TDS returns), daily attendance and overtime, finance integration, letters, employee and manager self-service, admin controls, roles and security." />
+  <meta property="og:image" content="https://pay.askproso.ai/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AskProso Payroll home screen: the AI briefing flags what is blocking the run, with net pay, employer cost and headcount" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AskProso Payroll features: compliance, attendance, salary changes, finance, self-service, security" />
+  <meta name="twitter:description" content="Everything in AskProso Payroll (pay.askproso.ai): India statutory compliance (labour codes, Income-tax Act 2025, PF, ESI, PT, TDS returns), daily attendance and overtime, finance integration, letters, employee and manager self-service, admin controls, roles and security." />
+  <meta name="twitter:image" content="https://pay.askproso.ai/img/og.jpg" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pay.askproso.ai/#organization",
+      "name": "AskProso Technologies Pvt. Ltd.",
+      "brand": {
+        "@type": "Brand",
+        "name": "AskProso Payroll"
+      },
+      "url": "https://www.askproso.ai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pay.askproso.ai/img/paylogo.png",
+        "width": 136,
+        "height": 149
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Proso.ai",
+        "url": "https://www.proso.ai"
+      },
+      "sameAs": [
+        "https://www.askproso.ai",
+        "https://www.proso.ai"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://www.proso.ai/contact-us",
+        "areaServed": "IN",
+        "availableLanguage": "English"
       }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pay.askproso.ai/#website",
+      "url": "https://pay.askproso.ai/",
+      "name": "AskProso Payroll",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://pay.askproso.ai/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://pay.askproso.ai/#product",
+      "name": "AskProso Payroll",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Payroll software",
+      "operatingSystem": "Web",
+      "url": "https://pay.askproso.ai/",
+      "image": "https://pay.askproso.ai/img/og.jpg",
+      "description": "AI-first payroll for India, as SaaS or fully managed. A deterministic engine calculates every rupee, AskProso AI briefs, flags and explains, and a person approves every run.",
+      "featureList": [
+        "PF, ESI, professional tax, LWF and TDS (Form 130, Form 138)",
+        "Attendance, shifts and overtime",
+        "Salary changes with arrears worked out month by month",
+        "Tally and Zoho Books journal; HDFC, ICICI and custom bank files",
+        "Employee and manager self-service",
+        "AI assistant that never calculates money or changes pay on its own",
+        "Maker-checker approvals and an audit trail"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "provider": {
+        "@id": "https://pay.askproso.ai/#organization"
+      },
+      "publisher": {
+        "@id": "https://pay.askproso.ai/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pay.askproso.ai/features.html#webpage",
+      "url": "https://pay.askproso.ai/features.html",
+      "name": "AskProso Payroll features",
+      "isPartOf": {
+        "@id": "https://pay.askproso.ai/#website"
+      },
+      "about": {
+        "@id": "https://pay.askproso.ai/#product"
+      },
+      "inLanguage": "en-IN",
+      "dateModified": "2026-11-13",
+      "breadcrumb": {
+        "@id": "https://pay.askproso.ai/features.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://pay.askproso.ai/features.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "AskProso Payroll",
+          "item": "https://pay.askproso.ai/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Features",
+          "item": "https://pay.askproso.ai/features.html"
+        }
+      ]
     }
+  ]
+}
   </script>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Custom Stylesheet -->
+  
+  <!-- Custom Stylesheet (Tailwind is compiled into it at build time) -->
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body class="bg-[#FAFAFC] dark:bg-[#06090F] text-slate-900 dark:text-slate-100 min-h-screen selection:bg-[#E20E3C] selection:text-white transition-colors duration-200">
@@ -983,10 +1082,7 @@
   </div>
 
   <!-- Scripts -->
+  <script type="module" src="./icons.js"></script>
   <script type="module" src="./app.js"></script>
-  <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
-  </script>
 </body>
 </html>

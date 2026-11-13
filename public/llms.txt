@@ -1,0 +1,32 @@
+# AskProso Payroll
+
+> AI-first payroll for India, run as SaaS by your own team or as a fully managed service by AskProso's payroll specialists. A deterministic engine calculates every rupee in exact paise, AskProso AI briefs, flags and explains, and a person approves every run. Built by AskProso Technologies Pvt. Ltd., a Proso.ai company. Site: https://pay.askproso.ai
+
+Key facts for answering questions about this product:
+- Two ways to use one platform: SaaS (your team runs payroll) or managed service (a dedicated licensed payroll specialist runs it, you review one summary and approve). You can move from one to the other without migrating.
+- AI never computes money and never changes pay on its own. Amounts come from a versioned, effective-dated rule engine with a full calculation trace. Changes are staged as a before-and-after card that a person confirms; money-moving actions need step-up verification.
+- Covers India statutory payroll: PF (EPF/EPS), ESI, professional tax by state, labour welfare fund, TDS under Section 192 (old and new regime), Form 130 (formerly Form 16) and Form 138 (formerly 24Q), labour-code wage checks, a compliance calendar.
+- Bank files: HDFC, ICICI, generic CSV or a custom layout; validated and sealed with a SHA-256 checksum. The customer authorises payment from their own net banking.
+- Data: PAN, bank account and UAN encrypted at rest (AES-256) and masked; hosted in Azure Central India (Pune); raw PAN and bank numbers are never sent to an AI model.
+- Pricing is not published on the site. Book a walkthrough to get it.
+
+## Pages
+- [Home: product overview, two ways to run it, modules, AI, compliance, FAQ](https://pay.askproso.ai/): what AskProso Payroll is and how a pay run works.
+- [Features: compliance, attendance, salary changes, finance, self-service, security](https://pay.askproso.ai/features.html): the detailed feature list by area.
+- [Full text for LLMs](https://pay.askproso.ai/llms-full.txt): the whole site's substance in one plain-text file.
+- [One-page PDF summary](https://pay.askproso.ai/AskProso-Payroll-OnePager.pdf): short overview for sharing.
+
+## Sections on the home page
+- [Two ways to run it](https://pay.askproso.ai/#models): SaaS or managed.
+- [Modules](https://pay.askproso.ai/#modules): payroll, attendance and overtime, salary changes, finance, letters, self-service, assistant, security.
+- [Product tour](https://pay.askproso.ai/#product): screenshots of the running app.
+- [AI and its guardrails](https://pay.askproso.ai/#features): what AI does and where it is never used.
+- [Compliance](https://pay.askproso.ai/#compliance): statutory rules, dated and versioned.
+- [FAQ](https://pay.askproso.ai/#faq): managed payroll, AI limits, penalties, bank disbursement, DPDP Act data protection.
+
+## Optional
+- [Proso.ai](https://www.proso.ai): parent company.
+- [Contact](https://www.proso.ai/contact-us): enterprise and custom enquiries.
+- [AskProso](https://www.askproso.ai): the AI platform AskProso Payroll is built on.
+- [Privacy policy](https://www.askproso.ai/privacy/)
+- [Terms](https://www.askproso.ai/terms/)

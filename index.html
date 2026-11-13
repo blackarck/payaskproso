@@ -3,50 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AskProso Payroll | pay.askproso.ai: AI-first payroll for India, SaaS or fully managed</title>
+  <title>AskProso Payroll: AI-first payroll software for India, SaaS or fully managed</title>
   <meta name="description" content="AI-first payroll for India. Run it yourself on our SaaS platform or hand it to our managed bureau. A deterministic engine calculates every rupee, AskProso AI briefs you, flags problems and answers questions, and a person approves every run." />
   <link rel="icon" type="image/png" href="/img/paylogo.png">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              ruby: '#E20E3C',
-              'ruby-dark': '#B50B30',
-              'ruby-light': '#FF2E5B',
-              'ruby-subtle': 'rgba(226, 14, 60, 0.08)',
-            },
-            payroll: {
-              DEFAULT: '#9C68BB',
-              dark: '#7E4BA3',
-              light: '#C39BE0',
-            },
-            accent: {
-              indigo: '#6366F1',
-              emerald: '#10B981',
-              amber: '#F59E0B',
-              cyan: '#06B6D4'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
+  <link rel="apple-touch-icon" href="/img/paylogo.png">
+  <link rel="canonical" href="https://pay.askproso.ai/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#E20E3C" />
+  <meta name="author" content="AskProso Technologies Pvt. Ltd." />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AskProso Payroll" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:url" content="https://pay.askproso.ai/" />
+  <meta property="og:title" content="AskProso Payroll: AI-first payroll software for India, SaaS or fully managed" />
+  <meta property="og:description" content="AI-first payroll for India. Run it yourself on our SaaS platform or hand it to our managed bureau. A deterministic engine calculates every rupee, AskProso AI briefs you, flags problems and answers questions, and a person approves every run." />
+  <meta property="og:image" content="https://pay.askproso.ai/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AskProso Payroll home screen: the AI briefing flags what is blocking the run, with net pay, employer cost and headcount" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AskProso Payroll: AI-first payroll software for India, SaaS or fully managed" />
+  <meta name="twitter:description" content="AI-first payroll for India. Run it yourself on our SaaS platform or hand it to our managed bureau. A deterministic engine calculates every rupee, AskProso AI briefs you, flags problems and answers questions, and a person approves every run." />
+  <meta name="twitter:image" content="https://pay.askproso.ai/img/og.jpg" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pay.askproso.ai/#organization",
+      "name": "AskProso Technologies Pvt. Ltd.",
+      "brand": {
+        "@type": "Brand",
+        "name": "AskProso Payroll"
+      },
+      "url": "https://www.askproso.ai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pay.askproso.ai/img/paylogo.png",
+        "width": 136,
+        "height": 149
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Proso.ai",
+        "url": "https://www.proso.ai"
+      },
+      "sameAs": [
+        "https://www.askproso.ai",
+        "https://www.proso.ai"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://www.proso.ai/contact-us",
+        "areaServed": "IN",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pay.askproso.ai/#website",
+      "url": "https://pay.askproso.ai/",
+      "name": "AskProso Payroll",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://pay.askproso.ai/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://pay.askproso.ai/#product",
+      "name": "AskProso Payroll",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Payroll software",
+      "operatingSystem": "Web",
+      "url": "https://pay.askproso.ai/",
+      "image": "https://pay.askproso.ai/img/og.jpg",
+      "description": "AI-first payroll for India, as SaaS or fully managed. A deterministic engine calculates every rupee, AskProso AI briefs, flags and explains, and a person approves every run.",
+      "featureList": [
+        "PF, ESI, professional tax, LWF and TDS (Form 130, Form 138)",
+        "Attendance, shifts and overtime",
+        "Salary changes with arrears worked out month by month",
+        "Tally and Zoho Books journal; HDFC, ICICI and custom bank files",
+        "Employee and manager self-service",
+        "AI assistant that never calculates money or changes pay on its own",
+        "Maker-checker approvals and an audit trail"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "provider": {
+        "@id": "https://pay.askproso.ai/#organization"
+      },
+      "publisher": {
+        "@id": "https://pay.askproso.ai/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pay.askproso.ai/#webpage",
+      "url": "https://pay.askproso.ai/",
+      "name": "AskProso Payroll: AI-first payroll for India, SaaS or fully managed",
+      "isPartOf": {
+        "@id": "https://pay.askproso.ai/#website"
+      },
+      "about": {
+        "@id": "https://pay.askproso.ai/#product"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://pay.askproso.ai/img/og.jpg"
+      },
+      "inLanguage": "en-IN",
+      "dateModified": "2026-11-13"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://pay.askproso.ai/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does \"Managed Payroll as a Service\" actually mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You no longer buy payroll software for your team to click through and fix. You hand over the payroll journey to us. A dedicated licensed payroll specialist, backed by AskProso AI and our calculation engine, handles your attendance and leave inputs, salary holds, tax deductions, PF/ESI/PT filings and the bank disbursement file. You review one clear summary of what changed and approve it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does AI fit in? Can it change my payroll or touch my money?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI does the surrounding work: mapping your spreadsheets, chasing missing data, flagging anomalies and explaining results. It never calculates money and never commits a change on its own. Every figure comes from our deterministic engine with a full trace. Any change, such as a salary hold or a one-time adjustment, is staged as a before-and-after card that a person must confirm, and money-moving actions need step-up verification. Every suggestion and approval is recorded in an immutable audit trail."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if there is a tax notice or statutory penalty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide a Zero-Penalty Compliance Guarantee. As long as your inputs reach us within the agreed monthly cutoff, our licensed bureau takes responsibility for the correctness and timeliness of your PF, ESI, Professional Tax and quarterly 24Q TDS filings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you disburse salaries into employee bank accounts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We generate a bank-ready disbursement file formatted for HDFC, ICICI, a generic CSV or a custom layout you define for your bank. It is validated before release (IFSC, account length, duplicates, control totals) and sealed with a SHA-256 checksum. You upload and authorise it from your own corporate net banking, so you always stay in control of the money. Direct host-to-host bank payouts are on our roadmap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is employee data protected under the DPDP Act 2023?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PAN, bank account numbers and UAN are encrypted at rest (AES-256) and masked everywhere they appear, for example XXXXX1234F. Data is hosted in Azure Central India (Pune) with backups in India. Before anything reaches an AI model, identifiers are masked or tokenised, so raw PAN and bank details are never part of a prompt, and the models themselves run in an India-region deployment."
           }
         }
-      }
+      ]
     }
+  ]
+}
   </script>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Custom Stylesheet -->
+  
+  <!-- Custom Stylesheet (Tailwind is compiled into it at build time) -->
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body class="bg-[#FAFAFC] dark:bg-[#06090F] text-slate-900 dark:text-slate-100 min-h-screen selection:bg-[#E20E3C] selection:text-white transition-colors duration-200">
@@ -1437,17 +1565,17 @@
       <form id="consultation-form" class="space-y-3.5">
         <div>
           <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Work Email</label>
-          <input type="email" required placeholder="you@company.com" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]" />
+          <input type="email" name="email" autocomplete="email" required placeholder="you@company.com" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]" />
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Company Name</label>
-            <input type="text" required placeholder="Acme Logistics" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]" />
+            <input type="text" name="company" autocomplete="organization" required placeholder="Acme Logistics" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]" />
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Team Size</label>
-            <select class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]">
+            <select name="team_size" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]">
               <option>10 - 50 employees</option>
               <option>51 - 250 employees</option>
               <option>251 - 1,000 employees</option>
@@ -1458,7 +1586,7 @@
 
         <div>
           <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">How Do You Run Payroll Today?</label>
-          <select class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]">
+          <select name="payroll_today" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]">
             <option>In-house team using Excel</option>
             <option>In-house team using payroll software / HRMS</option>
             <option>Another payroll bureau or CA firm</option>
@@ -1468,11 +1596,11 @@
 
         <div>
           <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Current Payroll Pain Point (Optional)</label>
-          <textarea rows="2" placeholder="e.g. Month-end delays, PF/PT notices, employee queries..." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]"></textarea>
+          <textarea name="pain_point" maxlength="1000" rows="2" placeholder="e.g. Month-end delays, PF/PT notices, employee queries..." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:border-[#E20E3C]"></textarea>
         </div>
 
         <button type="submit" class="btn-primary-laser w-full py-3 text-xs">
-          Book 15-Min Walkthrough &rarr;
+          Email Us the Details &rarr;
         </button>
 
         <p class="text-[10px] text-center text-slate-400 font-mono leading-relaxed">
@@ -1486,9 +1614,9 @@
         <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center mx-auto text-xl">
           ✓
         </div>
-        <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Walkthrough Scheduled!</h4>
+        <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white">Almost there: press send</h4>
         <p class="text-xs text-slate-500 max-w-xs mx-auto">
-          Our senior payroll bureau lead will reach out to your work email within 2 business hours with a calendar invite.
+          Your email app should have opened with these details ready. Press send and our payroll bureau lead will reply to book the walkthrough. Nothing opened? Write to <a href="mailto:payroll@askproso.ai" class="underline text-[#E20E3C]">payroll@askproso.ai</a>.
         </p>
       </div>
 
@@ -1496,10 +1624,7 @@
   </div>
 
   <!-- Scripts -->
+  <script type="module" src="./icons.js"></script>
   <script type="module" src="./app.js"></script>
-  <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
-  </script>
 </body>
 </html>

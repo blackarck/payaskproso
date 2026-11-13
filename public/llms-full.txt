@@ -1,0 +1,88 @@
+# AskProso Payroll (pay.askproso.ai)
+
+AI-first payroll for India. One platform, two ways to use it: your team runs payroll on the SaaS, or AskProso's payroll specialists run it for you as a managed service. A deterministic engine calculates every rupee, AskProso AI briefs you each morning, flags what is in the way and answers questions, and a person approves every run.
+
+Publisher: AskProso Technologies Pvt. Ltd., a Proso.ai company. Web app: https://payapp.askproso.ai. Contact: https://www.proso.ai/contact-us. Pricing is not published; a walkthrough is booked from the site.
+
+## The idea
+AI proposes. The engine calculates. Humans approve.
+- AI (AskProso AI): maps messy spreadsheets, chases missing data, flags anomalies, drafts wording, explains results. It suggests; it never decides and never calculates money.
+- Engine: a versioned, effective-dated, testable rule engine. Money is held in exact integer paise (no floating-point drift). Same inputs plus same rule version give the same answer. Every figure has a calculation trace. The engine never calls an AI.
+- People: licensed specialists (managed) or your own approvers (SaaS) review every run. Changes need explicit confirmation; money-moving actions need step-up verification; everything lands in an immutable audit trail.
+
+## Problem it addresses
+Payroll goes wrong in the gaps between tools: a spreadsheet for the maths, WhatsApp for chasing, e-mail for approvals, memory for due dates. Typical symptoms: raises applied as one percentage to every component, back-dated increments with arrears rebuilt by hand, missing attendance and bank details, forgotten due dates (PF on the 15th, TDS on the 7th, state PT dates), payslips nobody can explain, no audit trail.
+
+## Two ways to run it
+1. SaaS: your team runs it. Sign in with a Microsoft work account; bring employees in from a spreadsheet, the API or your directory; run payroll monthly from one screen. Roles: owner, HR manager and custom roles, with a second person approving every run. Employee and manager self-service (payslips, tax, claims, leave, attendance with punch-in and corrections, letters, approvals). An assistant on every screen. REST API with per-company keys for employees, attendance (monthly or daily punches), leave and the finance journal.
+2. Managed: hand it over. A dedicated payroll specialist runs the month on the same platform, supported by AskProso AI. You review one summary of what changed and why, and sign off. Specialists get Mission Control (every client's run stage, health score and cut-off in one view) and an exception inbox that learns each client's recurring fixes. PF, ESI and TDS source files are prepared and checked before filing. You authorise the bank file from your own net banking.
+The same engine, AI and controls sit under both; you can move between them without migrating.
+
+## Modules
+- Payroll: pay runs with PF, ESI, professional tax, LWF, TDS, Form 130, Form 138, labour-code wage checks and a compliance calendar.
+- Attendance, shifts and overtime: daily attendance from punches or a sheet, shifts and rosters, overtime rules, leave in the same place; loss of pay reaches the run automatically.
+- Salary changes: raise by amount or percentage, set components per person, see arrears month by month before saving. A 10% raise does not force every component up 10%: HR decides what moves; the Special Allowance balances to CTC and a "still to place" line shows how much of the raise sits in it. Back-dated changes recalculate each paid month component by component, and the payslip that pays the arrears repeats the working. Amounts feed What-if scenarios and the simulator.
+- Finance: balanced journal by cost centre for Tally, Zoho Books and others; validated bank files for HDFC, ICICI or a custom layout.
+- Letters: offer, relieving, experience and salary certificates, each with a reference and a public way to verify it.
+- Employee and manager self-service: payslips, tax declarations, leave, claims, punch-in, letters on a phone; managers approve their team in the same portal.
+- Assistant: ask in plain words; it answers from your own data (under the signed-in user's permissions; employees only see their own pay), prepares changes as a card and changes nothing until a person confirms. Draws on 68 help articles.
+- Security and admin: maker and checker, recent sign-in for money actions, per-company isolation, a trail of who changed what. Several companies and mid-year starts are supported.
+
+## AI features
+- Home briefing: opens with what matters today, which runs are open, how many items block approval, how many need review.
+- Run Watch: after every calculation, and hourly for open runs, code-based checks look for missing bank details, large swings in a person's or the total pay, approaching cut-offs, stale runs and waiting approvals; the AI then words the brief.
+- Sign-off pack: plain-English summary of what changed since last month, who needs review, what was held.
+- Smart Import: upload Excel or CSV, paste rows, call the API or read your directory; AI maps headers, every row is validated, clean rows commit atomically and a problem sheet lists the rest.
+- What-if simulator: describe who in your own words, try a raise, new plan or joiner, see the effect on pay, tax and company cost; nothing is saved.
+- Employee Q&A: answers read from the employee's own calculation trace (for example why take-home changed, or what a professional tax deduction is).
+- Exception inbox (managed clients): AI-worded client messages and fixes the system learns.
+- Coming soon (not yet available): Autonomous Data Chaser (T-7 to T-1 reminders over email and WhatsApp for missing attendance, PANs and bank details, approved in one click) and Continuous Shadow Payroll.
+Guardrails: amounts always come from the engine; AI never changes pay on its own (changes are staged as a before-and-after card); AI never sees raw PAN or bank numbers (masked or tokenised first; models run in an India-region deployment).
+
+## How a pay run works (same four steps either way)
+1. Inputs: drop a monthly Excel or CSV, or use the API. AI maps headers and flags bad IFSCs or duplicate PANs before commit.
+2. Calculate and check: the engine calculates; Run Watch flags missing data, big swings and cut-offs.
+3. Approve: AI-written sign-off pack; a second person approves with step-up sign-in on sensitive actions.
+4. Pay and file: a validated, sealed bank file; PF, ESI and TDS source files prepared and checked; payslips reach employees as secure links that expire.
+
+## Indian statutory compliance
+Rules are versioned with effective dates, a source and a note on who verified them; anything an adviser has not confirmed is marked. New rates or slabs are published as reviewed, back-tested rules with an effective date, with no software release needed.
+- PF: EPF/EPS split with the Rs 25,000 wage ceiling from 17 September 2026 (Rs 15,000 for earlier months, or actual-wage mode), voluntary PF, international workers, labour-code wage definition.
+- ESI: Rs 21,000 threshold with statutory round-up.
+- Professional tax: state-wise slabs, with gender and February rules (for example Maharashtra).
+- TDS: Section 192 projection across old and new regimes for FY 2026-27, investment declarations and proofs, challan tracking, quarterly return file Form 138 (formerly 24Q) for validation in the FVU utility; Form 130 (formerly Form 16) generated as a PDF per employee from finalized runs.
+- Also: labour welfare fund, labour codes, Income-tax Act 2025, minimum-wage checks, compliance calendar with e-mail reminders to the people who can file.
+
+## Bank files
+Ready-made HDFC, ICICI and generic CSV layouts plus custom layouts for any other bank. Validated before release (IFSC, account length, duplicates, control totals) and sealed with a SHA-256 checksum. You upload and authorise from your own corporate net banking. Direct host-to-host payouts are on the roadmap.
+
+## Data protection
+PAN, bank account numbers and UAN encrypted at rest (AES-256) and masked everywhere shown. Hosted in Azure Central India (Pune) with backups in India. Identifiers are masked or tokenised before anything reaches an AI model. Written with the DPDP Act 2023 in mind.
+
+## Comparison (common patterns, not any one product)
+- Maths: spreadsheets use overwritable formulas; typical software hides rules; AskProso uses a versioned rule engine in exact paise with a trace.
+- Non-proportional raises: by hand vs one structure for everyone vs components set per person with the balance to CTC shown.
+- Back-dated increments: arrears rebuilt by hand vs a lump sum vs each month recalculated on screen and on the payslip.
+- Missing data: chased on WhatsApp vs left to you vs flagged by Run Watch.
+- Approval: whoever holds the file vs one click vs maker and checker with recent sign-in and audit trail.
+
+## FAQ
+Q: What does "Managed Payroll as a Service" mean?
+A: You hand over the payroll journey. A dedicated licensed payroll specialist, backed by AskProso AI and the calculation engine, handles attendance and leave inputs, salary holds, tax deductions, PF/ESI/PT filings and the bank disbursement file. You review one summary of what changed and approve it.
+
+Q: Where does AI fit in? Can it change my payroll or touch my money?
+A: AI does the surrounding work: mapping spreadsheets, chasing missing data, flagging anomalies, explaining results. It never calculates money and never commits a change on its own. Changes are staged as a before-and-after card a person must confirm, money-moving actions need step-up verification, and everything is recorded in an immutable audit trail.
+
+Q: What happens if there is a tax notice or statutory penalty?
+A: For managed clients there is a Zero-Penalty Compliance Guarantee: as long as inputs arrive within the agreed monthly cutoff, the licensed bureau takes responsibility for correctness and timeliness of PF, ESI, Professional Tax and quarterly 24Q TDS filings.
+
+Q: How are salaries disbursed?
+A: A bank-ready file for HDFC, ICICI, generic CSV or a custom layout, validated and checksum-sealed. You upload and authorise it from your own net banking.
+
+Q: How is employee data protected under the DPDP Act 2023?
+A: Encryption at rest (AES-256), masking, India hosting (Azure Pune), and no raw PAN or bank details in any AI prompt.
+
+## Pages
+- https://pay.askproso.ai/ (overview)
+- https://pay.askproso.ai/features.html (feature detail by area)
+- https://pay.askproso.ai/AskProso-Payroll-OnePager.pdf (one-page PDF)
