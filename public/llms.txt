@@ -5,7 +5,11 @@
 Key facts for answering questions about this product:
 - Two ways to use one platform: SaaS (your team runs payroll) or managed service (a dedicated licensed payroll specialist runs it, you review one summary and approve). You can move from one to the other without migrating.
 - AI never computes money and never changes pay on its own. Amounts come from a versioned, effective-dated rule engine with a full calculation trace. Changes are staged as a before-and-after card that a person confirms; money-moving actions need step-up verification.
-- Covers India statutory payroll: PF (EPF/EPS), ESI, professional tax by state, labour welfare fund, TDS under Section 192 (old and new regime), Form 130 (formerly Form 16) and Form 138 (formerly 24Q), labour-code wage checks, a compliance calendar.
+- Covers India statutory payroll: PF (EPF/EPS), ESI, professional tax by state (states are added as verified), labour welfare fund, TDS under Section 192 (old and new regime), Form 130 (formerly Form 16) and Form 138 (formerly 24Q), labour-code wage checks, a compliance calendar.
+- Switching from another provider or starting mid-year is supported: a Switching providers checklist imports each person's earlier-month pay, tax, PT and PF, leave and reimbursement balances, and leave and attendance history, with a check before saving, a cross-check against the old provider's totals, and reversal until a run is finalized. Earlier quarterly TDS returns stay with the old provider.
+- Several companies can sit under one sign-in (company switcher). A guided starter setup offers presets by kind of business (IT, manufacturing, service, financial, professional practice).
+- Employee and manager self-service is on the web. A native iOS app for employees and managers is in development and not yet released; there is no Android app, and admin work is web only.
+- Statutory figures not yet confirmed by an adviser are marked in the product; this includes the 17 September 2026 PF ceiling change (and how EPS follows it), FY 2026-27 income-tax figures and several states' professional-tax slabs.
 - Bank files: HDFC, ICICI, generic CSV or a custom layout; validated and sealed with a SHA-256 checksum. The customer authorises payment from their own net banking.
 - Data: PAN, bank account and UAN encrypted at rest (AES-256) and masked; hosted in Azure Central India (Pune); raw PAN and bank numbers are never sent to an AI model.
 - Pricing is not published on the site. Book a walkthrough to get it.
@@ -22,7 +26,7 @@ Key facts for answering questions about this product:
 - [Product tour](https://pay.askproso.ai/#product): screenshots of the running app.
 - [AI and its guardrails](https://pay.askproso.ai/#features): what AI does and where it is never used.
 - [Compliance](https://pay.askproso.ai/#compliance): statutory rules, dated and versioned.
-- [FAQ](https://pay.askproso.ai/#faq): managed payroll, AI limits, penalties, bank disbursement, DPDP Act data protection.
+- [FAQ](https://pay.askproso.ai/#faq): managed payroll, AI limits, penalties, bank disbursement, DPDP Act data protection, switching from another provider mid-year.
 
 ## Optional
 - [Proso.ai](https://www.proso.ai): parent company.

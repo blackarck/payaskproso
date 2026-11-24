@@ -20,13 +20,16 @@ The same engine, AI and controls sit under both; you can move between them witho
 
 ## Modules
 - Payroll: pay runs with PF, ESI, professional tax, LWF, TDS, Form 130, Form 138, labour-code wage checks and a compliance calendar.
-- Attendance, shifts and overtime: daily attendance from punches or a sheet, shifts and rosters, overtime rules, leave in the same place; loss of pay reaches the run automatically.
+- Attendance, shifts and overtime: daily attendance from punches or a sheet, shifts and rosters, overtime rules, leave in the same place; loss of pay reaches the run automatically. Optional rules (off until set) make unplanned late arrival after a cutoff (half or full day), early exit (half day), no punch or a single punch unpaid; approved leave is never touched, each day shows the rule applied, and HR can waive it with a reason before the month is released.
 - Salary changes: raise by amount or percentage, set components per person, see arrears month by month before saving. A 10% raise does not force every component up 10%: HR decides what moves; the Special Allowance balances to CTC and a "still to place" line shows how much of the raise sits in it. Back-dated changes recalculate each paid month component by component, and the payslip that pays the arrears repeats the working. Amounts feed What-if scenarios and the simulator.
 - Finance: balanced journal by cost centre for Tally, Zoho Books and others; validated bank files for HDFC, ICICI or a custom layout.
 - Letters: offer, relieving, experience and salary certificates, each with a reference and a public way to verify it.
 - Employee and manager self-service: payslips, tax declarations, leave, claims, punch-in, letters on a phone; managers approve their team in the same portal.
-- Assistant: ask in plain words; it answers from your own data (under the signed-in user's permissions; employees only see their own pay), prepares changes as a card and changes nothing until a person confirms. Draws on 68 help articles.
-- Security and admin: maker and checker, recent sign-in for money actions, per-company isolation, a trail of who changed what. Several companies and mid-year starts are supported.
+- Assistant: ask in plain words; it answers from your own data (under the signed-in user's permissions; employees only see their own pay), prepares changes as a card and changes nothing until a person confirms. Draws on more than 70 help articles.
+- Security and admin: maker and checker, recent sign-in for money actions, per-company isolation, a trail of who changed what.
+- Setup: a guided starter setup by kind of business (IT and software, manufacturing, service business, financial organisation, professional practice) proposes a pay group, salary structure, leave types, holidays, departments, designations and expense categories; you can paste your own lists, leave items out, add everything at once and undo. Nothing already set up is overwritten. Values are starting points, not advice, and unverified ones are marked.
+- Several companies: an owner can add another company from the company switcher and move between companies under one sign-in; each is isolated. Separately, several legal entities (own PAN, TAN, registrations) can sit inside one company.
+- Mobile: a native iOS app for employees and managers (leave, payslips, requests, manager approvals, the assistant with confirm cards) is in development and not yet released. No Android app. Admin features stay on the web.
 
 ## AI features
 - Home briefing: opens with what matters today, which runs are open, how many items block approval, how many need review.
@@ -34,7 +37,10 @@ The same engine, AI and controls sit under both; you can move between them witho
 - Sign-off pack: plain-English summary of what changed since last month, who needs review, what was held.
 - Smart Import: upload Excel or CSV, paste rows, call the API or read your directory; AI maps headers, every row is validated, clean rows commit atomically and a problem sheet lists the rest.
 - What-if simulator: describe who in your own words, try a raise, new plan or joiner, see the effect on pay, tax and company cost; nothing is saved.
-- Employee Q&A: answers read from the employee's own calculation trace (for example why take-home changed, or what a professional tax deduction is).
+- Employee Q&A: answers read from the employee's own calculation trace (for example why take-home changed, or what a professional tax deduction is), once the company switches that on.
+- Forms assist: type what you want above a form (leave type, employee, loan, claim) and the assistant fills the fields for you to check and save; identity numbers are never filled by it.
+- Company notes: short notes about how your company works (for example the pay day) that the assistant uses; saved only after a person confirms, and they cannot hold ID numbers or amounts.
+- Setup coach: Home lists what is not set up or not used yet and what the company gains by doing it. No AI is involved.
 - Exception inbox (managed clients): AI-worded client messages and fixes the system learns.
 - Coming soon (not yet available): Autonomous Data Chaser (T-7 to T-1 reminders over email and WhatsApp for missing attendance, PANs and bank details, approved in one click) and Continuous Shadow Payroll.
 Guardrails: amounts always come from the engine; AI never changes pay on its own (changes are staged as a before-and-after card); AI never sees raw PAN or bank numbers (masked or tokenised first; models run in an India-region deployment).
@@ -47,11 +53,15 @@ Guardrails: amounts always come from the engine; AI never changes pay on its own
 
 ## Indian statutory compliance
 Rules are versioned with effective dates, a source and a note on who verified them; anything an adviser has not confirmed is marked. New rates or slabs are published as reviewed, back-tested rules with an effective date, with no software release needed.
-- PF: EPF/EPS split with the Rs 25,000 wage ceiling from 17 September 2026 (Rs 15,000 for earlier months, or actual-wage mode), voluntary PF, international workers, labour-code wage definition.
+- PF: EPF/EPS split with the Rs 25,000 wage ceiling from 17 September 2026 as we read the change, awaiting adviser confirmation (Rs 15,000 for earlier months, or actual-wage mode), voluntary PF, international workers, labour-code wage definition.
 - ESI: Rs 21,000 threshold with statutory round-up.
-- Professional tax: state-wise slabs, with gender and February rules (for example Maharashtra).
-- TDS: Section 192 projection across old and new regimes for FY 2026-27, investment declarations and proofs, challan tracking, quarterly return file Form 138 (formerly 24Q) for validation in the FVU utility; Form 130 (formerly Form 16) generated as a PDF per employee from finalized runs.
+- Professional tax: state-wise slabs, with gender and February rules (for example Maharashtra). States are added as each is verified; slabs not yet confirmed by an adviser are marked in the product.
+- TDS: Section 192 projection across old and new regimes for FY 2026-27 (figures awaiting adviser confirmation), investment declarations and proofs, challan tracking, quarterly return file Form 138 (formerly 24Q) for validation in the FVU utility; Form 130 (formerly Form 16) generated as a PDF per employee from finalized runs.
 - Also: labour welfare fund, labour codes, Income-tax Act 2025, minimum-wage checks, compliance calendar with e-mail reminders to the people who can file.
+
+## Switching from another provider or mid-year
+Q: Can I bring my old payroll data, or switch in the middle of a year?
+A: Yes. In Payroll, Switching providers, a checklist walks through: people and pay groups, tax regime and declarations, year-to-date pay and tax for each month already paid (gross, taxable, TDS, PT, employee PF and voluntary PF, HRA exempt, NPS, 80C), a cross-check against the old provider's totals, leave balances, optionally reimbursement and flexible-benefit balances, leave history and attendance history, then the first run. Every file is checked before anything is saved and can be reversed until a run from the start month is finalized. Tax for the rest of the year and Form 130 then carry on correctly. Quarterly TDS returns for months before you start are filed by the old provider. Not covered: gratuity service registers other than from date of joining, arrear registers and a per-person comparison of the first run with the old provider's last month.
 
 ## Bank files
 Ready-made HDFC, ICICI and generic CSV layouts plus custom layouts for any other bank. Validated before release (IFSC, account length, duplicates, control totals) and sealed with a SHA-256 checksum. You upload and authorise from your own corporate net banking. Direct host-to-host payouts are on the roadmap.
@@ -75,6 +85,9 @@ A: AI does the surrounding work: mapping spreadsheets, chasing missing data, fla
 
 Q: What happens if there is a tax notice or statutory penalty?
 A: For managed clients there is a Zero-Penalty Compliance Guarantee: as long as inputs arrive within the agreed monthly cutoff, the licensed bureau takes responsibility for correctness and timeliness of PF, ESI, Professional Tax and quarterly 24Q TDS filings.
+
+Q: Can I bring my old payroll data, or switch in the middle of a year?
+A: Yes; see the section above. Book a walkthrough to review your last register.
 
 Q: How are salaries disbursed?
 A: A bank-ready file for HDFC, ICICI, generic CSV or a custom layout, validated and checksum-sealed. You upload and authorise it from your own net banking.
