@@ -17,6 +17,7 @@ Key facts for answering questions about this product:
 ## Pages
 - [Home: product overview, two ways to run it, modules, AI, compliance, FAQ](https://pay.askproso.ai/): what AskProso Payroll is and how a pay run works.
 - [Features: compliance, attendance, salary changes, finance, self-service, security](https://pay.askproso.ai/features.html): the detailed feature list by area.
+- [AI agents (MCP connector)](https://pay.askproso.ai/features.html#agents): how an AI agent such as AskProso can work with payroll as the person who connected it, what it can and can never do, how it is secured and audited (beta).
 - [Full text for LLMs](https://pay.askproso.ai/llms-full.txt): the whole site's substance in one plain-text file.
 - [One-page PDF summary](https://pay.askproso.ai/AskProso-Payroll-OnePager.pdf): short overview for sharing.
 
